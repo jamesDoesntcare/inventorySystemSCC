@@ -94,8 +94,8 @@ Partial Class frmMain
         'POSToolStripMenuItem
         '
         Me.POSToolStripMenuItem.Name = "POSToolStripMenuItem"
-        Me.POSToolStripMenuItem.Size = New System.Drawing.Size(175, 26)
-        Me.POSToolStripMenuItem.Text = "Sales Report"
+        Me.POSToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.POSToolStripMenuItem.Text = "Sales Reports"
         '
         'LogoutToolStripMenuItem
         '
