@@ -253,9 +253,9 @@ Partial Class frmMain
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(257, 358)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(189, 22)
+        Me.Label2.Size = New System.Drawing.Size(129, 22)
         Me.Label2.TabIndex = 32
-        Me.Label2.Text = "St. Cecilia's College"
+        Me.Label2.Text = "asdsadsadsa"
         '
         'Label3
         '
