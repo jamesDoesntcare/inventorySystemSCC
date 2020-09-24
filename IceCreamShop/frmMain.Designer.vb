@@ -165,9 +165,9 @@ Partial Class frmMain
         Me.Label4.ForeColor = System.Drawing.Color.Goldenrod
         Me.Label4.Location = New System.Drawing.Point(246, 135)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(414, 87)
+        Me.Label4.Size = New System.Drawing.Size(549, 87)
         Me.Label4.TabIndex = 27
-        Me.Label4.Text = "NVENTORY"
+        Me.Label4.Text = "asiudkjashdkjh"
         '
         'Panel2
         '
