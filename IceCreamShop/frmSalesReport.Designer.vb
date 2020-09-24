@@ -54,9 +54,9 @@ Partial Class frmSalesReport
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(4, 8)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(147, 24)
+        Me.Label4.Size = New System.Drawing.Size(232, 24)
         Me.Label4.TabIndex = 26
-        Me.Label4.Text = "SALES REPORT"
+        Me.Label4.Text = "TRANSACTION REPORT"
         '
         'Label1
         '
