@@ -24,7 +24,11 @@
             frmMain.lblUser.Text = cbopos.Text
             cbopos.Text = "- Select -"
             tbpcode.Text = ""
+<<<<<<< HEAD
+            'MsgBox("Welcome!", MsgBoxStyle.Information)
+=======
             'MsgBox("Welcome!", MsgBoxStyle.Information)a
+>>>>>>> c90578c08cc61cf503a628d54ed8f352e0f75296
             Me.Hide()
         Else
             MsgBox("Incorrect passcode", MsgBoxStyle.Critical)

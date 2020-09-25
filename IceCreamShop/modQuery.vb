@@ -4,11 +4,26 @@
         Connected()
         With lv
             .Items.Clear()
+<<<<<<< HEAD
+            sql = "SELECT * FROM Item"
+=======
             sql = "SELECT * from Item"
+>>>>>>> c90578c08cc61cf503a628d54ed8f352e0f75296
             CommandDB()
             dr = cmd.ExecuteReader()
             lv.Items.Clear()
             While (dr.Read())
+<<<<<<< HEAD
+                With lv.Items.Add(dr("Item_ID"))
+                    .SubItems.Add(dr("Item_Brand"))
+                    .SubItems.Add(dr("Item_Type"))
+                    .SubItems.Add(dr("Item_price"))
+                    .SubItems.Add(dr("Item_Date Purchased"))
+                    .SubItems.Add(dr("Item_Quantity"))
+                    .SubItems.Add(dr("Item_Unit Price"))
+                    .SubItems.Add(dr("Item_Supplier"))
+                    .SubItems.Add(dr("Item_Location"))
+=======
                 With lv.Items.Add(dr("item_id"))
                     .SubItems.Add(dr("item_type"))
                     .SubItems.Add(dr("item_brand"))
@@ -18,6 +33,7 @@
                     .SubItems.Add(dr("item_location"))
                     .SubItems.Add(dr("item_status"))
                     .SubItems.Add(dr("item_supplier"))
+>>>>>>> c90578c08cc61cf503a628d54ed8f352e0f75296
                 End With
             End While
         End With
@@ -59,7 +75,11 @@
     Public Sub PopulateCategory(ByVal cbo As ComboBox)
         Connected()
         cbo.Items.Clear()
+<<<<<<< HEAD
+        sql = " SELECT distinct item_type FROM item"
+=======
         sql = " SELECT distinct item_type FROM Item"
+>>>>>>> c90578c08cc61cf503a628d54ed8f352e0f75296
         CommandDB()
         dr = cmd.ExecuteReader()
         While (dr.Read())
