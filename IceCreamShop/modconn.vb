@@ -10,7 +10,7 @@ Module modconn
         With conn
             Try
                 If .State = ConnectionState.Open Then .Close()
-                .ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Inventory.mdb;"
+                .ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\icecream.mdb;"
                 .Open()
             Catch
                 MsgBox("Error in Database! Contact Administrator.")
