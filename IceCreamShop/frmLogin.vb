@@ -24,7 +24,7 @@
             frmMain.lblUser.Text = cbopos.Text
             cbopos.Text = "- Select -"
             tbpcode.Text = ""
-            MsgBox("Welcome!", MsgBoxStyle.Information)
+            'MsgBox("Welcome!", MsgBoxStyle.Information)
             Me.Hide()
         Else
             MsgBox("Incorrect passcode", MsgBoxStyle.Critical)

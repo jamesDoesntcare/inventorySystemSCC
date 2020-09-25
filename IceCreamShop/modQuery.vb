@@ -4,22 +4,20 @@
         Connected()
         With lv
             .Items.Clear()
-            sql = "SELECT Item.item_id, Item.item_brand, Item.item_datepurchase, Item.item_quantity, Item.item_supplier, Item.item_userID, Item.item_location, Item.item_status, Item.item_price, Type.type_name
-FROM Type INNER JOIN Item ON Type.type_id = Item.item_type;
-"
+            sql = "SELECT * FROM Item"
             CommandDB()
             dr = cmd.ExecuteReader()
             lv.Items.Clear()
             While (dr.Read())
-                With lv.Items.Add(dr("item_id"))
-                    .SubItems.Add(dr("type_name"))
-                    .SubItems.Add(dr("item_brand"))
-                    .SubItems.Add(dr("item_price"))
-                    .SubItems.Add(dr("item_quantity"))
-                    .SubItems.Add(dr("item_datepurchase"))
-                    .SubItems.Add(dr("item_location"))
-                    .SubItems.Add(dr("item_status"))
-                    .SubItems.Add(dr("item_supplier"))
+                With lv.Items.Add(dr("Item_ID"))
+                    .SubItems.Add(dr("Item_Brand"))
+                    .SubItems.Add(dr("Item_Type"))
+                    .SubItems.Add(dr("Item_price"))
+                    .SubItems.Add(dr("Item_Date Purchased"))
+                    .SubItems.Add(dr("Item_Quantity"))
+                    .SubItems.Add(dr("Item_Unit Price"))
+                    .SubItems.Add(dr("Item_Supplier"))
+                    .SubItems.Add(dr("Item_Location"))
                 End With
             End While
         End With
@@ -61,7 +59,7 @@ FROM Type INNER JOIN Item ON Type.type_id = Item.item_type;
     Public Sub PopulateCategory(ByVal cbo As ComboBox)
         Connected()
         cbo.Items.Clear()
-        sql = " SELECT distinct type_name FROM type"
+        sql = " SELECT distinct item_type FROM item"
         CommandDB()
         dr = cmd.ExecuteReader()
         While (dr.Read())
