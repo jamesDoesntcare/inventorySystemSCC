@@ -4,18 +4,16 @@
         Connected()
         With lv
             .Items.Clear()
-            sql = "SELECT Item.item_id, Item.item_brand, Item.item_datepurchase, Item.item_quantity, Item.item_supplier, Item.item_userID, Item.item_location, Item.item_status, Item.item_price, Type.type_name
-FROM Type INNER JOIN Item ON Type.type_id = Item.item_type;
-"
+            sql = "SELECT * from Item"
             CommandDB()
             dr = cmd.ExecuteReader()
             lv.Items.Clear()
             While (dr.Read())
                 With lv.Items.Add(dr("item_id"))
-                    .SubItems.Add(dr("type_name"))
+                    .SubItems.Add(dr("item_type"))
                     .SubItems.Add(dr("item_brand"))
                     .SubItems.Add(dr("item_price"))
-                    .SubItems.Add(dr("item_quantity"))
+                    .SubItems.Add(dr("item_stock"))
                     .SubItems.Add(dr("item_datepurchase"))
                     .SubItems.Add(dr("item_location"))
                     .SubItems.Add(dr("item_status"))
@@ -61,11 +59,12 @@ FROM Type INNER JOIN Item ON Type.type_id = Item.item_type;
     Public Sub PopulateCategory(ByVal cbo As ComboBox)
         Connected()
         cbo.Items.Clear()
-        sql = " SELECT distinct type_name FROM type"
+        sql = " SELECT distinct item_type FROM Item"
         CommandDB()
         dr = cmd.ExecuteReader()
         While (dr.Read())
             cbo.Items.Add(dr(0))
+
         End While
     End Sub
 
@@ -79,14 +78,14 @@ FROM Type INNER JOIN Item ON Type.type_id = Item.item_type;
         lv.Items.Clear()
         While (dr.Read())
             With lv.Items.Add(dr("item_id"))
-                .SubItems.Add(dr("item_brand"))
-                .SubItems.Add(dr("item_datepurchase"))
-                .SubItems.Add(dr("item_quantity"))
-                .SubItems.Add(dr("item_supplier"))
                 .SubItems.Add(dr("item_type"))
-                .SubItems.Add(dr("item_userID"))
+                .SubItems.Add(dr("item_brand"))
+                .SubItems.Add(dr("item_price"))
+                .SubItems.Add(dr("item_stock"))
+                .SubItems.Add(dr("item_datepurchase"))
                 .SubItems.Add(dr("item_location"))
                 .SubItems.Add(dr("item_status"))
+                .SubItems.Add(dr("item_supplier"))
             End With
 
         End While
