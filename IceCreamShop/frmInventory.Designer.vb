@@ -134,9 +134,9 @@ Partial Class frmInventory
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.Label7.Location = New System.Drawing.Point(16, 11)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(148, 21)
+        Me.Label7.Size = New System.Drawing.Size(123, 21)
         Me.Label7.TabIndex = 38
-        Me.Label7.Text = "- Search Product -"
+        Me.Label7.Text = "- Search Item -"
         '
         'Label6
         '
@@ -145,9 +145,9 @@ Partial Class frmInventory
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(13, 73)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(113, 21)
+        Me.Label6.Size = New System.Drawing.Size(88, 21)
         Me.Label6.TabIndex = 37
-        Me.Label6.Text = "- Product list -"
+        Me.Label6.Text = "- Item list -"
         '
         'Label9
         '
@@ -178,9 +178,9 @@ Partial Class frmInventory
         Me.Category.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.Category.Location = New System.Drawing.Point(12, 18)
         Me.Category.Name = "Category"
-        Me.Category.Size = New System.Drawing.Size(151, 21)
+        Me.Category.Size = New System.Drawing.Size(126, 21)
         Me.Category.TabIndex = 25
-        Me.Category.Text = "Product Category"
+        Me.Category.Text = "Item Category"
         '
         'Panel2
         '
@@ -303,9 +303,9 @@ Partial Class frmInventory
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(13, 78)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(124, 21)
+        Me.Label2.Size = New System.Drawing.Size(99, 21)
         Me.Label2.TabIndex = 29
-        Me.Label2.Text = "Product Name"
+        Me.Label2.Text = "Item Name"
         '
         'tbprice
         '
@@ -325,9 +325,9 @@ Partial Class frmInventory
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(13, 136)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(113, 21)
+        Me.Label3.Size = New System.Drawing.Size(88, 21)
         Me.Label3.TabIndex = 31
-        Me.Label3.Text = "Product Price"
+        Me.Label3.Text = "Item Price"
         '
         'tbstock
         '

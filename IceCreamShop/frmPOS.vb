@@ -38,7 +38,7 @@ Public Class frmPOS
         'load all products in listview
         btncancel.Enabled = False
         PopulateProducts(lvProducts, getSortby())
-        lblORno.Text = GenerateOrderNo()
+        'lblORno.Text = GenerateOrderNo()
         doChangeListViewColor(lvProducts)
         toggleBtnEnabbled()
         setNotif("Double click an item to add and return a products", Alert.Info)
@@ -90,9 +90,9 @@ Public Class frmPOS
         updateQtyListOrder(enterQty, subtotal)
 
         'update total, change & no of items
-        lbltotal.Text = ComputeCollumn(3)
-        lblitems.Text = ComputeCollumn(2)
-        lblchange.Text = ComputeChange(Val(tbcash.Text), lbltotal.Text)
+        'lbltotal.Text = ComputeCollumn(3)
+        'lblitems.Text = ComputeCollumn(2)
+        'lblchange.Text = ComputeChange(Val(tbcash.Text), lbltotal.Text)
 
         toggleBtnEnabbled()
         setNotif("Added " & enterQty & " " & prodname.ToUpper, Alert.Info)
@@ -127,22 +127,22 @@ Public Class frmPOS
         updateQtyListOrder(-enterOrder, -newsubtotal)
 
         'update total, change & no of items
-        lbltotal.Text = ComputeCollumn(3)
-        lblitems.Text = ComputeCollumn(2)
-        lblchange.Text = ComputeChange(Val(tbcash.Text), Val(lbltotal.Text)).ToString("N")
+        'lbltotal.Text = ComputeCollumn(3)
+        'lblitems.Text = ComputeCollumn(2)
+        'lblchange.Text = ComputeChange(Val(tbcash.Text), Val(lbltotal.Text)).ToString("N")
 
         toggleBtnEnabbled()
         setNotif("Returned " & enterOrder & " " & prodname.ToUpper, Alert.Info)
     End Sub
 
-    Private Sub tbcash_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles tbcash.KeyDown
+    Private Sub tbcash_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs)
         If e.KeyCode = Keys.Enter Then
             doPurchase()
         End If
     End Sub
 
-    Private Sub tbcash_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbcash.TextChanged
-        lblchange.Text = ComputeChange(Val(tbcash.Text), Val(lbltotal.Text)).ToString("N")
+    Private Sub tbcash_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        'lblchange.Text = ComputeChange(Val(tbcash.Text), Val(lbltotal.Text)).ToString("N")
     End Sub
 
     Private Sub btnpay_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPurchase.Click
@@ -164,27 +164,27 @@ Public Class frmPOS
 
 
     Sub doPurchase()
-        If lvorder.Items.Count = 0 Then
-            Exit Sub
-        End If
+        'If lvorder.Items.Count = 0 Then
+        '    Exit Sub
+        'End If
 
-        If Val(tbcash.Text) < Val(lbltotal.Text) Then
-            setNotif("Insufficient Cash!", Alert.Warning)
-            Exit Sub
-        End If
+        'If Val(tbcash.Text) < Val(lbltotal.Text) Then
+        '    setNotif("Insufficient Cash!", Alert.Warning)
+        '    Exit Sub
+        'End If
 
-        Me.Enabled = False
-        Dim confirm = MsgBox("Proceed?" & vbNewLine & vbNewLine & _
-               "OR No: " & lblORno.Text.ToUpper & vbNewLine & _
-               "Customer Name: " & tbcustomer.Text.ToUpper & vbNewLine & _
-               "Total: " & lbltotal.Text & vbNewLine & _
-               "Change: " & lblchange.Text & vbNewLine _
-               , MsgBoxStyle.YesNo, "Ice Cream Shop")
+        'Me.Enabled = False
+        'Dim confirm = MsgBox("Proceed?" & vbNewLine & vbNewLine & _
+        '       "OR No: " & lblORno.Text.ToUpper & vbNewLine & _
+        '       "Customer Name: " & tbcustomer.Text.ToUpper & vbNewLine & _
+        '       "Total: " & lbltotal.Text & vbNewLine & _
+        '       "Change: " & lblchange.Text & vbNewLine _
+        '       , MsgBoxStyle.YesNo, "Ice Cream Shop")
 
-        If confirm = MsgBoxResult.No Then
-            Me.Enabled = True
-            Exit Sub
-        End If
+        'If confirm = MsgBoxResult.No Then
+        '    Me.Enabled = True
+        '    Exit Sub
+        'End If
 
         saveSales(lvorder)
         mapStock()
@@ -274,20 +274,20 @@ Public Class frmPOS
     End Sub
 
     Function ComputeChange(Optional ByVal cash As Double = 0, Optional ByVal total As Double = 0) As Double
-        If cash.ToString = "" Then
-            tbcash.ForeColor = Color.Crimson
-            Return 0
-        End If
-        If Val(cash) < Val(total) Then
-            tbcash.ForeColor = Color.Crimson
-            Return 0
-        End If
-        If Val(total) = 0 Then
-            tbcash.ForeColor = Color.Lime
-            Return 0
-        End If
-        tbcash.ForeColor = Color.Lime
-        Return Val(cash) - Val(total)
+        'If cash.ToString = "" Then
+        '    tbcash.ForeColor = Color.Crimson
+        '    Return 0
+        'End If
+        'If Val(cash) < Val(total) Then
+        '    tbcash.ForeColor = Color.Crimson
+        '    Return 0
+        'End If
+        'If Val(total) = 0 Then
+        '    tbcash.ForeColor = Color.Lime
+        '    Return 0
+        'End If
+        'tbcash.ForeColor = Color.Lime
+        'Return Val(cash) - Val(total)
     End Function
 
     Function ComputeCollumn(ByVal col As Integer) As Double
@@ -298,38 +298,38 @@ Public Class frmPOS
     End Function
 
     Sub saveSales(ByVal listView As ListView)
-        Dim odate As String = Format(Now, "d")
-        Dim lv
-        Dim ctr As Integer
-        Dim iloop As Integer
-        ctr = listView.Items.Count()
-        If Not listView.Items.Count = 0 Then
-            Do Until iloop = listView.Items.Count
-                lv = listView.Items.Item(iloop)
-                With lv
-                    Connected()
-                    sql = "INSERT into tblsales (ORno,customer_name,prod_name,prod_price,prod_qty,prod_subtotal,date_order) VALUES ('" & lblORno.Text & "','" & tbcustomer.Text & "','" & .subitems(0).Text.ToUpper & "'," & .subitems(1).Text.ToUpper & "," & .subitems(2).Text.ToUpper & "," & .subitems(3).Text.ToUpper & ",'" & odate.ToString & "')"
-                    CommandDB()
-                    cmd.ExecuteNonQuery()
-                End With
-                iloop = iloop + 1
-                lv = Nothing
-            Loop
-        End If
+        'Dim odate As String = Format(Now, "d")
+        'Dim lv
+        'Dim ctr As Integer
+        'Dim iloop As Integer
+        'ctr = listView.Items.Count()
+        'If Not listView.Items.Count = 0 Then
+        '    Do Until iloop = listView.Items.Count
+        '        lv = listView.Items.Item(iloop)
+        '        With lv
+        '            Connected()
+        '            sql = "INSERT into tblsales (ORno,customer_name,prod_name,prod_price,prod_qty,prod_subtotal,date_order) VALUES ('" & lblORno.Text & "','" & tbcustomer.Text & "','" & .subitems(0).Text.ToUpper & "'," & .subitems(1).Text.ToUpper & "," & .subitems(2).Text.ToUpper & "," & .subitems(3).Text.ToUpper & ",'" & odate.ToString & "')"
+        '            CommandDB()
+        '            cmd.ExecuteNonQuery()
+        '        End With
+        '        iloop = iloop + 1
+        '        lv = Nothing
+        '    Loop
+        'End If
     End Sub
 
     Sub resetOrder()
-        lvorder.Items.Clear()
-        lblORno.Text = GenerateOrderNo()
-        PopulateProducts(lvProducts, getSortby())
-        doChangeListViewColor(lvProducts)
-        lbltotal.Text = 0
-        lblitems.Text = 0
-        tbcash.Text = 0
-        lblchange.Text = 0
-        tbcustomer.Text = "WALK-IN"
-        tbcash.ForeColor = Color.Crimson
-        btncancel.Enabled = False
+        'lvorder.Items.Clear()
+        'lblORno.Text = GenerateOrderNo()
+        'PopulateProducts(lvProducts, getSortby())
+        'doChangeListViewColor(lvProducts)
+        'lbltotal.Text = 0
+        'lblitems.Text = 0
+        'tbcash.Text = 0
+        'lblchange.Text = 0
+        'tbcustomer.Text = "WALK-IN"
+        'tbcash.ForeColor = Color.Crimson
+        'btncancel.Enabled = False
     End Sub
 
     Sub CancelTransaction()
