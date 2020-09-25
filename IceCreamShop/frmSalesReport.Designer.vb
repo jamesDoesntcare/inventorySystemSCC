@@ -191,7 +191,7 @@ Partial Class frmSalesReport
         Me.lvsales.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lvsales.FullRowSelect = True
         Me.lvsales.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        Me.lvsales.Location = New System.Drawing.Point(19, 36)
+        Me.lvsales.Location = New System.Drawing.Point(20, 36)
         Me.lvsales.Name = "lvsales"
         Me.lvsales.Size = New System.Drawing.Size(1004, 465)
         Me.lvsales.TabIndex = 35
