@@ -22,6 +22,8 @@ Public Class frmInventory
         'load all category in combobox
         PopulateCategory(cbocategory)
         doChangeListViewColor(lvProducts)
+        cbstatus.Items.Add("New")
+        cbstatus.Items.Add("Old")
         getDate()
     End Sub
 
@@ -42,7 +44,9 @@ Public Class frmInventory
             tbprice.Text = .SubItems(3).Text
             tbstock.Text = .SubItems(4).Text
             tbpurchase.Text = .SubItems(5).Text
-            tbpass.Text = .SubItems(6).Text
+            tblocation.Text = .SubItems(6).Text
+            cbstatus.Text = .SubItems(7).Text
+            tbsupplier.Text = .SubItems(8).Text
         End With
         pndetails.Enabled = True
     End Sub
@@ -107,15 +111,33 @@ Public Class frmInventory
 
     Sub SaveData()
         Connected()
-        sql = "INSERT INTO item (prod_category, prod_name, prod_price, prod_stock, prod_purchasedate, prod_passdate) VALUES ('" & cbocategory.Text.ToUpper & "','" & tbname.Text.ToUpper & "'," & tbprice.Text & "," & tbstock.Text & ",'" & tbpurchase.Text.ToString & "','" & tbpass.Text.ToString & "')"
+        sql = "INSERT INTO item 
+                                (item_brand,
+                                 item_datepurchase,
+                                 item_stock,
+                                 item_supplier,
+                                 item_userID,
+                                 item_location,
+                                 item_status,
+                                 item_price,
+                                 item_type ) 
+                       VALUES ('" & tbname.Text.ToUpper & "',
+                               '" & tbpurchase.Text.ToString & "',
+                               '" & tbstock.Text & "',
+                               '" & tbsupplier.Text.ToString & "',
+                               '" & " 2 " & "',
+                               '" & tblocation.Text.ToString & "',
+                               '" & cbstatus.Text.ToUpper & "',
+                               '" & tbprice.Text.ToString & "',
+                               '" & cbocategory.Text.ToUpper & "')"
         CommandDB()
         dr = cmd.ExecuteReader()
-        PopulateProducts(lvProducts, "prod_category")
+        PopulateProducts(lvProducts, "type_name")
     End Sub
 
     Sub EditData()
         Connected()
-        sql = "UPDATE tblproducts SET prod_category = '" & cbocategory.Text.ToUpper & "', prod_name = '" & tbname.Text.ToUpper & "', prod_price = " & tbprice.Text & " , prod_stock = " & tbstock.Text & ", prod_purchasedate = '" & tbpurchase.Text.ToString & "', prod_passdate = '" & tbpass.Text.ToString & "' where id = " & id & ""
+        sql = "UPDATE tblproducts SET prod_category = '" & cbocategory.Text.ToUpper & "', prod_name = '" & tbname.Text.ToUpper & "', prod_price = " & tbprice.Text & " , prod_stock = " & tbstock.Text & ", prod_purchasedate = '" & tbpurchase.Text.ToString & "', prod_passdate = '" & tblocation.Text.ToString & "' where id = " & id & ""
         CommandDB()
         cmd.ExecuteNonQuery()
         PopulateProducts(lvProducts, "prod_category")
@@ -141,7 +163,7 @@ Public Class frmInventory
     End Sub
 
     Function IsUserInputValid() As Boolean
-        If cbocategory.Text = "" Or cbocategory.Text.ToLower = "select" Or tbname.Text = "" Or tbstock.Text = "" Or tbprice.Text = "" Or tbpurchase.Text = "" Or tbpass.Text = "" Then
+        If cbocategory.Text = "" Or cbocategory.Text.ToLower = "select" Or tbname.Text = "" Or tbstock.Text = "" Or tbprice.Text = "" Or tbpurchase.Text = "" Or tblocation.Text = "" Then
             MsgBox("Missing input", MsgBoxStyle.Critical)
             Return False
         ElseIf IsProductExist("tblproducts", "prod_name", tbname.Text) = True Then
@@ -164,7 +186,7 @@ Public Class frmInventory
 
     Sub getDate()
         tbpurchase.Text = Format(Now, "short date")
-        tbpass.Text = Format(Now, "short date")
+        tblocation.Text = Format(Now, "short date")
     End Sub
 
 #End Region
