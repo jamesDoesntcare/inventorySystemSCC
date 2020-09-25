@@ -54,51 +54,54 @@ Partial Class frmMain
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(10, 15, 0, 3)
-        Me.MenuStrip1.Size = New System.Drawing.Size(129, 614)
+        Me.MenuStrip1.Size = New System.Drawing.Size(125, 614)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'TransactionToolStripMenuItem
         '
         Me.TransactionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InventoryToolStripMenuItem, Me.orderingToolStripMenuItem})
-        Me.TransactionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TransactionToolStripMenuItem.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TransactionToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.TransactionToolStripMenuItem.Name = "TransactionToolStripMenuItem"
-        Me.TransactionToolStripMenuItem.Size = New System.Drawing.Size(108, 25)
+        Me.TransactionToolStripMenuItem.Size = New System.Drawing.Size(104, 23)
         Me.TransactionToolStripMenuItem.Text = "Transactions"
         Me.TransactionToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'InventoryToolStripMenuItem
         '
         Me.InventoryToolStripMenuItem.Name = "InventoryToolStripMenuItem"
-        Me.InventoryToolStripMenuItem.Size = New System.Drawing.Size(155, 26)
+        Me.InventoryToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
         Me.InventoryToolStripMenuItem.Text = "Inventory"
         '
         'orderingToolStripMenuItem
         '
         Me.orderingToolStripMenuItem.Name = "orderingToolStripMenuItem"
-        Me.orderingToolStripMenuItem.Size = New System.Drawing.Size(155, 26)
+        Me.orderingToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
         Me.orderingToolStripMenuItem.Text = "POS"
         '
         'ReportsToolStripMenuItem
         '
         Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.POSToolStripMenuItem})
-        Me.ReportsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ReportsToolStripMenuItem.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ReportsToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
-        Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(108, 25)
+        Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(104, 23)
         Me.ReportsToolStripMenuItem.Text = "Reports"
         Me.ReportsToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'POSToolStripMenuItem
         '
         Me.POSToolStripMenuItem.Name = "POSToolStripMenuItem"
-        Me.POSToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.POSToolStripMenuItem.Size = New System.Drawing.Size(176, 24)
         Me.POSToolStripMenuItem.Text = "Sales Reports"
         '
         'LogoutToolStripMenuItem
         '
-        Me.LogoutToolStripMenuItem.ForeColor = System.Drawing.Color.Crimson
+        Me.LogoutToolStripMenuItem.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LogoutToolStripMenuItem.ForeColor = System.Drawing.Color.Red
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(108, 25)
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(104, 23)
         Me.LogoutToolStripMenuItem.Text = "Logout"
         Me.LogoutToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '

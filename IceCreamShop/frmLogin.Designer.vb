@@ -40,7 +40,7 @@ Partial Class frmLogin
         Me.btnlogin.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnlogin.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnlogin.ForeColor = System.Drawing.Color.Crimson
+        Me.btnlogin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnlogin.Location = New System.Drawing.Point(119, 229)
         Me.btnlogin.Name = "btnlogin"
         Me.btnlogin.Size = New System.Drawing.Size(92, 40)
@@ -53,7 +53,7 @@ Partial Class frmLogin
         Me.tbpcode.BackColor = System.Drawing.Color.White
         Me.tbpcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbpcode.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbpcode.ForeColor = System.Drawing.Color.Crimson
+        Me.tbpcode.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.tbpcode.Location = New System.Drawing.Point(119, 169)
         Me.tbpcode.Name = "tbpcode"
         Me.tbpcode.Size = New System.Drawing.Size(232, 31)
@@ -66,7 +66,7 @@ Partial Class frmLogin
         Me.cbopos.BackColor = System.Drawing.Color.White
         Me.cbopos.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cbopos.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbopos.ForeColor = System.Drawing.Color.Crimson
+        Me.cbopos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.cbopos.FormattingEnabled = True
         Me.cbopos.Items.AddRange(New Object() {"Employee", "Manager"})
         Me.cbopos.Location = New System.Drawing.Point(119, 104)
@@ -96,7 +96,7 @@ Partial Class frmLogin
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.DeepPink
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(11, 11)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(132, 22)
@@ -156,7 +156,7 @@ Partial Class frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Green
+        Me.BackColor = System.Drawing.Color.DarkGray
         Me.ClientSize = New System.Drawing.Size(952, 594)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lblUser)

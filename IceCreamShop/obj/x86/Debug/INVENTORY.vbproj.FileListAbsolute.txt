@@ -17,3 +17,22 @@ F:\InventorySystemSCC\IceCreamShop\obj\x86\Debug\INVENTORY.vbproj.CopyComplete
 F:\InventorySystemSCC\IceCreamShop\obj\x86\Debug\IceCreamShop.exe
 F:\InventorySystemSCC\IceCreamShop\obj\x86\Debug\IceCreamShop.xml
 F:\InventorySystemSCC\IceCreamShop\obj\x86\Debug\IceCreamShop.pdb
+D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\bin\Debug\IceCreamShop.exe.config
+D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\bin\Debug\IceCreamShop.exe
+D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\bin\Debug\IceCreamShop.pdb
+D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\bin\Debug\IceCreamShop.xml
+D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\bin\Debug\kitchanRandomStuff.pdb
+D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\bin\Debug\kitchanRandomStuff.xml
+D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\obj\x86\Debug\INVENTORY.vbprojAssemblyReference.cache
+D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\obj\x86\Debug\IceCreamShop.frmMain.resources
+D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\obj\x86\Debug\IceCreamShop.frmSalesReport.resources
+D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\obj\x86\Debug\IceCreamShop.frmPOS.resources
+D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\obj\x86\Debug\IceCreamShop.frmInventory.resources
+D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\obj\x86\Debug\IceCreamShop.frmLogin.resources
+D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\obj\x86\Debug\IceCreamShop.Resources.resources
+D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\obj\x86\Debug\INVENTORY.vbproj.GenerateResource.cache
+D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\obj\x86\Debug\INVENTORY.vbproj.CoreCompileInputs.cache
+D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\obj\x86\Debug\INVENTORY.vbproj.CopyComplete
+D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\obj\x86\Debug\IceCreamShop.exe
+D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\obj\x86\Debug\IceCreamShop.xml
+D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\obj\x86\Debug\IceCreamShop.pdb
