@@ -46,7 +46,7 @@ Partial Class frmMain
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.MenuStrip1.BackColor = System.Drawing.Color.ForestGreen
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuStrip1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(2, 2, 0, 4)
@@ -149,7 +149,7 @@ Partial Class frmMain
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 54.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Goldenrod
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(441, 122)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(191, 87)
@@ -160,7 +160,7 @@ Partial Class frmMain
         '
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.ForestGreen
         Me.Panel2.Controls.Add(Me.btnreport)
         Me.Panel2.Controls.Add(Me.btninventory)
         Me.Panel2.Controls.Add(Me.btnpos)
@@ -175,12 +175,12 @@ Partial Class frmMain
         'btnreport
         '
         Me.btnreport.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.btnreport.BackColor = System.Drawing.Color.IndianRed
+        Me.btnreport.BackColor = System.Drawing.Color.ForestGreen
         Me.btnreport.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnreport.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed
+        Me.btnreport.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen
         Me.btnreport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnreport.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnreport.ForeColor = System.Drawing.Color.White
+        Me.btnreport.Font = New System.Drawing.Font("Century Gothic", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnreport.ForeColor = System.Drawing.Color.Black
         Me.btnreport.Location = New System.Drawing.Point(347, 13)
         Me.btnreport.Name = "btnreport"
         Me.btnreport.Size = New System.Drawing.Size(178, 88)
@@ -191,12 +191,12 @@ Partial Class frmMain
         'btninventory
         '
         Me.btninventory.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.btninventory.BackColor = System.Drawing.Color.MediumSlateBlue
+        Me.btninventory.BackColor = System.Drawing.Color.ForestGreen
         Me.btninventory.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btninventory.FlatAppearance.BorderColor = System.Drawing.Color.MediumSlateBlue
+        Me.btninventory.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen
         Me.btninventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btninventory.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btninventory.ForeColor = System.Drawing.Color.White
+        Me.btninventory.Font = New System.Drawing.Font("Century Gothic", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btninventory.ForeColor = System.Drawing.Color.Black
         Me.btninventory.Location = New System.Drawing.Point(537, 13)
         Me.btninventory.Name = "btninventory"
         Me.btninventory.Size = New System.Drawing.Size(178, 88)
@@ -207,12 +207,12 @@ Partial Class frmMain
         'btnpos
         '
         Me.btnpos.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.btnpos.BackColor = System.Drawing.Color.Teal
+        Me.btnpos.BackColor = System.Drawing.Color.ForestGreen
         Me.btnpos.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnpos.FlatAppearance.BorderColor = System.Drawing.Color.Teal
+        Me.btnpos.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen
         Me.btnpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnpos.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnpos.ForeColor = System.Drawing.Color.White
+        Me.btnpos.Font = New System.Drawing.Font("Century Gothic", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnpos.ForeColor = System.Drawing.Color.Black
         Me.btnpos.Location = New System.Drawing.Point(727, 13)
         Me.btnpos.Name = "btnpos"
         Me.btnpos.Size = New System.Drawing.Size(178, 88)
@@ -225,8 +225,8 @@ Partial Class frmMain
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 110.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(90, 183)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(89, 185)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(877, 177)
         Me.Label1.TabIndex = 28
