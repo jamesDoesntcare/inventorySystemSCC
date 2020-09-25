@@ -34,15 +34,12 @@ Partial Class frmMain
         Me.lblTime = New System.Windows.Forms.Label()
         Me.lblUser = New System.Windows.Forms.Label()
         Me.tmrDate = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnreport = New System.Windows.Forms.Button()
         Me.btninventory = New System.Windows.Forms.Button()
         Me.btnpos = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -146,16 +143,6 @@ Partial Class frmMain
         Me.tmrDate.Enabled = True
         Me.tmrDate.Interval = 1000
         '
-        'Panel1
-        '
-        Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Panel1.BackColor = System.Drawing.Color.Goldenrod
-        Me.Panel1.ForeColor = System.Drawing.Color.Goldenrod
-        Me.Panel1.Location = New System.Drawing.Point(240, 144)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(11, 197)
-        Me.Panel1.TabIndex = 12
-        '
         'Label4
         '
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -163,11 +150,11 @@ Partial Class frmMain
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 54.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Goldenrod
-        Me.Label4.Location = New System.Drawing.Point(246, 135)
+        Me.Label4.Location = New System.Drawing.Point(441, 122)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(549, 87)
+        Me.Label4.Size = New System.Drawing.Size(191, 87)
         Me.Label4.TabIndex = 27
-        Me.Label4.Text = "asiudkjashdkjh"
+        Me.Label4.Text = "SCC"
         '
         'Panel2
         '
@@ -182,7 +169,7 @@ Partial Class frmMain
         Me.Panel2.Controls.Add(Me.lblTime)
         Me.Panel2.Location = New System.Drawing.Point(-2, 501)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(911, 114)
+        Me.Panel2.Size = New System.Drawing.Size(917, 114)
         Me.Panel2.TabIndex = 13
         '
         'btnreport
@@ -194,7 +181,7 @@ Partial Class frmMain
         Me.btnreport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnreport.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnreport.ForeColor = System.Drawing.Color.White
-        Me.btnreport.Location = New System.Drawing.Point(341, 13)
+        Me.btnreport.Location = New System.Drawing.Point(347, 13)
         Me.btnreport.Name = "btnreport"
         Me.btnreport.Size = New System.Drawing.Size(178, 88)
         Me.btnreport.TabIndex = 31
@@ -210,7 +197,7 @@ Partial Class frmMain
         Me.btninventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btninventory.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btninventory.ForeColor = System.Drawing.Color.White
-        Me.btninventory.Location = New System.Drawing.Point(531, 13)
+        Me.btninventory.Location = New System.Drawing.Point(537, 13)
         Me.btninventory.Name = "btninventory"
         Me.btninventory.Size = New System.Drawing.Size(178, 88)
         Me.btninventory.TabIndex = 30
@@ -226,7 +213,7 @@ Partial Class frmMain
         Me.btnpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnpos.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnpos.ForeColor = System.Drawing.Color.White
-        Me.btnpos.Location = New System.Drawing.Point(721, 13)
+        Me.btnpos.Location = New System.Drawing.Point(727, 13)
         Me.btnpos.Name = "btnpos"
         Me.btnpos.Size = New System.Drawing.Size(178, 88)
         Me.btnpos.TabIndex = 29
@@ -239,54 +226,26 @@ Partial Class frmMain
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 110.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(229, 185)
+        Me.Label1.Location = New System.Drawing.Point(90, 183)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(587, 177)
+        Me.Label1.Size = New System.Drawing.Size(877, 177)
         Me.Label1.TabIndex = 28
-        Me.Label1.Text = "SYSTEM"
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(257, 358)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(189, 22)
-        Me.Label2.TabIndex = 32
-        Me.Label2.Text = "St. Cecilia's College"
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Goldenrod
-        Me.Label3.Location = New System.Drawing.Point(185, 36)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(132, 115)
-        Me.Label3.TabIndex = 33
-        Me.Label3.Text = "O"
+        Me.Label1.Text = "INVENTORY"
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(909, 614)
-        Me.Controls.Add(Me.Label2)
+        Me.ClientSize = New System.Drawing.Size(915, 614)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Ice Cream Store"
+        Me.Text = "INVENTORY"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -306,7 +265,6 @@ Partial Class frmMain
     Friend WithEvents lblTime As System.Windows.Forms.Label
     Friend WithEvents lblUser As System.Windows.Forms.Label
     Friend WithEvents tmrDate As System.Windows.Forms.Timer
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents btnreport As System.Windows.Forms.Button
@@ -314,6 +272,4 @@ Partial Class frmMain
     Friend WithEvents btnpos As System.Windows.Forms.Button
     Friend WithEvents LogoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class
