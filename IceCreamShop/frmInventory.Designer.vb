@@ -56,6 +56,8 @@ Partial Class frmInventory
         Me.btnadd = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.pndetails.SuspendLayout()
@@ -80,7 +82,7 @@ Partial Class frmInventory
         '
         Me.lvProducts.BackColor = System.Drawing.Color.White
         Me.lvProducts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lvProducts.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader4, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader5, Me.ColumnHeader7, Me.ColumnHeader6})
+        Me.lvProducts.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader4, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader5, Me.ColumnHeader7, Me.ColumnHeader6, Me.ColumnHeader8, Me.ColumnHeader9})
         Me.lvProducts.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvProducts.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lvProducts.FullRowSelect = True
@@ -99,33 +101,31 @@ Partial Class frmInventory
         '
         'ColumnHeader4
         '
-        Me.ColumnHeader4.Text = "Category"
-        Me.ColumnHeader4.Width = 139
+        Me.ColumnHeader4.Text = "Type"
+        Me.ColumnHeader4.Width = 100
         '
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "Name"
-        Me.ColumnHeader2.Width = 157
+        Me.ColumnHeader2.Width = 100
         '
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "Price"
-        Me.ColumnHeader3.Width = 98
         '
         'ColumnHeader5
         '
         Me.ColumnHeader5.Text = "Stock"
-        Me.ColumnHeader5.Width = 86
         '
         'ColumnHeader7
         '
         Me.ColumnHeader7.Text = "Purchase Date"
-        Me.ColumnHeader7.Width = 152
+        Me.ColumnHeader7.Width = 150
         '
         'ColumnHeader6
         '
-        Me.ColumnHeader6.Text = "Pass Date"
-        Me.ColumnHeader6.Width = 92
+        Me.ColumnHeader6.Text = "Location"
+        Me.ColumnHeader6.Width = 90
         '
         'Label7
         '
@@ -433,6 +433,16 @@ Partial Class frmInventory
         Me.Button1.Text = " X"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'ColumnHeader8
+        '
+        Me.ColumnHeader8.Text = "Status"
+        Me.ColumnHeader8.Width = 70
+        '
+        'ColumnHeader9
+        '
+        Me.ColumnHeader9.Text = "Supplier"
+        Me.ColumnHeader9.Width = 100
+        '
         'frmInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -490,5 +500,6 @@ Partial Class frmInventory
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
-
+    Friend WithEvents ColumnHeader8 As ColumnHeader
+    Friend WithEvents ColumnHeader9 As ColumnHeader
 End Class
