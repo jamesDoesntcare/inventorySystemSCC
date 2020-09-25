@@ -107,7 +107,7 @@ Public Class frmInventory
 
     Sub SaveData()
         Connected()
-        sql = "INSERT INTO tblproducts (prod_category, prod_name, prod_price, prod_stock, prod_purchasedate, prod_passdate) VALUES ('" & cbocategory.Text.ToUpper & "','" & tbname.Text.ToUpper & "'," & tbprice.Text & "," & tbstock.Text & ",'" & tbpurchase.Text.ToString & "','" & tbpass.Text.ToString & "')"
+        sql = "INSERT INTO item (prod_category, prod_name, prod_price, prod_stock, prod_purchasedate, prod_passdate) VALUES ('" & cbocategory.Text.ToUpper & "','" & tbname.Text.ToUpper & "'," & tbprice.Text & "," & tbstock.Text & ",'" & tbpurchase.Text.ToString & "','" & tbpass.Text.ToString & "')"
         CommandDB()
         dr = cmd.ExecuteReader()
         PopulateProducts(lvProducts, "prod_category")
@@ -182,5 +182,4 @@ Public Class frmInventory
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Me.Close()
     End Sub
-
 End Class
