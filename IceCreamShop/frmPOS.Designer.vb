@@ -35,22 +35,10 @@ Partial Class frmPOS
         Me.Label11 = New System.Windows.Forms.Label()
         Me.tbsearch = New System.Windows.Forms.TextBox()
         Me.panelPurchase = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.lblitems = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.tbcash = New System.Windows.Forms.TextBox()
-        Me.lblORno = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.lblchange = New System.Windows.Forms.Label()
-        Me.lbltotal = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.btnPurchase = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.btncancel = New System.Windows.Forms.Button()
         Me.panelOrder = New System.Windows.Forms.Panel()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.tbcustomer = New System.Windows.Forms.TextBox()
         Me.lvorder = New System.Windows.Forms.ListView()
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -59,6 +47,7 @@ Partial Class frmPOS
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.panelProduct.SuspendLayout()
         Me.panelPurchase.SuspendLayout()
         Me.panelOrder.SuspendLayout()
@@ -183,132 +172,12 @@ Partial Class frmPOS
         '
         Me.panelPurchase.BackColor = System.Drawing.Color.WhiteSmoke
         Me.panelPurchase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.panelPurchase.Controls.Add(Me.Panel4)
-        Me.panelPurchase.Controls.Add(Me.lblitems)
-        Me.panelPurchase.Controls.Add(Me.Label14)
-        Me.panelPurchase.Controls.Add(Me.tbcash)
-        Me.panelPurchase.Controls.Add(Me.lblORno)
-        Me.panelPurchase.Controls.Add(Me.Label16)
-        Me.panelPurchase.Controls.Add(Me.Label3)
-        Me.panelPurchase.Controls.Add(Me.lblchange)
-        Me.panelPurchase.Controls.Add(Me.lbltotal)
-        Me.panelPurchase.Controls.Add(Me.Label6)
         Me.panelPurchase.Controls.Add(Me.btnPurchase)
-        Me.panelPurchase.Controls.Add(Me.Label2)
         Me.panelPurchase.ForeColor = System.Drawing.SystemColors.ButtonShadow
         Me.panelPurchase.Location = New System.Drawing.Point(571, 462)
         Me.panelPurchase.Name = "panelPurchase"
         Me.panelPurchase.Size = New System.Drawing.Size(479, 214)
         Me.panelPurchase.TabIndex = 28
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel4.Location = New System.Drawing.Point(19, 105)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(435, 1)
-        Me.Panel4.TabIndex = 45
-        '
-        'lblitems
-        '
-        Me.lblitems.AutoSize = True
-        Me.lblitems.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblitems.ForeColor = System.Drawing.Color.Teal
-        Me.lblitems.Location = New System.Drawing.Point(254, 64)
-        Me.lblitems.Name = "lblitems"
-        Me.lblitems.Size = New System.Drawing.Size(22, 24)
-        Me.lblitems.TabIndex = 38
-        Me.lblitems.Text = "0"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(252, 35)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(102, 21)
-        Me.Label14.TabIndex = 37
-        Me.Label14.Text = "No. of Items"
-        '
-        'tbcash
-        '
-        Me.tbcash.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.tbcash.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbcash.Font = New System.Drawing.Font("Century Gothic", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbcash.ForeColor = System.Drawing.Color.Crimson
-        Me.tbcash.Location = New System.Drawing.Point(19, 145)
-        Me.tbcash.Name = "tbcash"
-        Me.tbcash.Size = New System.Drawing.Size(289, 50)
-        Me.tbcash.TabIndex = 34
-        Me.tbcash.Text = "0.00"
-        Me.tbcash.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'lblORno
-        '
-        Me.lblORno.AutoSize = True
-        Me.lblORno.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblORno.ForeColor = System.Drawing.Color.Teal
-        Me.lblORno.Location = New System.Drawing.Point(370, 66)
-        Me.lblORno.Name = "lblORno"
-        Me.lblORno.Size = New System.Drawing.Size(83, 22)
-        Me.lblORno.TabIndex = 31
-        Me.lblORno.Text = "OR1000"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.Label16.Location = New System.Drawing.Point(15, 121)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(131, 21)
-        Me.Label16.TabIndex = 36
-        Me.Label16.Text = "Cash Rendered"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(370, 35)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(85, 21)
-        Me.Label3.TabIndex = 30
-        Me.Label3.Text = "Order No."
-        '
-        'lblchange
-        '
-        Me.lblchange.AutoSize = True
-        Me.lblchange.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblchange.ForeColor = System.Drawing.Color.Teal
-        Me.lblchange.Location = New System.Drawing.Point(153, 64)
-        Me.lblchange.Name = "lblchange"
-        Me.lblchange.Size = New System.Drawing.Size(51, 24)
-        Me.lblchange.TabIndex = 35
-        Me.lblchange.Text = "0.00"
-        '
-        'lbltotal
-        '
-        Me.lbltotal.AutoSize = True
-        Me.lbltotal.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltotal.ForeColor = System.Drawing.Color.Teal
-        Me.lbltotal.Location = New System.Drawing.Point(18, 64)
-        Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(51, 24)
-        Me.lbltotal.TabIndex = 34
-        Me.lbltotal.Text = "0.00"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(151, 35)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(75, 21)
-        Me.Label6.TabIndex = 31
-        Me.Label6.Text = "Change"
         '
         'btnPurchase
         '
@@ -323,17 +192,6 @@ Partial Class frmPOS
         Me.btnPurchase.TabIndex = 28
         Me.btnPurchase.Text = "PURCHASE"
         Me.btnPurchase.UseVisualStyleBackColor = True
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(16, 35)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(118, 21)
-        Me.Label2.TabIndex = 29
-        Me.Label2.Text = "Amount Total"
         '
         'btncancel
         '
@@ -354,9 +212,9 @@ Partial Class frmPOS
         '
         Me.panelOrder.BackColor = System.Drawing.Color.WhiteSmoke
         Me.panelOrder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panelOrder.Controls.Add(Me.ComboBox1)
         Me.panelOrder.Controls.Add(Me.btncancel)
         Me.panelOrder.Controls.Add(Me.Label8)
-        Me.panelOrder.Controls.Add(Me.tbcustomer)
         Me.panelOrder.Controls.Add(Me.lvorder)
         Me.panelOrder.Controls.Add(Me.Label12)
         Me.panelOrder.ForeColor = System.Drawing.SystemColors.ButtonShadow
@@ -375,18 +233,6 @@ Partial Class frmPOS
         Me.Label8.Size = New System.Drawing.Size(166, 21)
         Me.Label8.TabIndex = 31
         Me.Label8.Text = "- Assigned Item List -"
-        '
-        'tbcustomer
-        '
-        Me.tbcustomer.BackColor = System.Drawing.Color.White
-        Me.tbcustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbcustomer.Font = New System.Drawing.Font("Century Gothic", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbcustomer.ForeColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.tbcustomer.Location = New System.Drawing.Point(19, 35)
-        Me.tbcustomer.Name = "tbcustomer"
-        Me.tbcustomer.Size = New System.Drawing.Size(286, 50)
-        Me.tbcustomer.TabIndex = 30
-        Me.tbcustomer.Text = "WALK-IN"
         '
         'lvorder
         '
@@ -460,6 +306,17 @@ Partial Class frmPOS
         Me.Button1.Text = " X"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.ItemHeight = 17
+        Me.ComboBox1.Location = New System.Drawing.Point(20, 49)
+        Me.ComboBox1.MaximumSize = New System.Drawing.Size(300, 0)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(273, 25)
+        Me.ComboBox1.TabIndex = 39
+        '
         'frmPOS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -478,7 +335,6 @@ Partial Class frmPOS
         Me.panelProduct.ResumeLayout(False)
         Me.panelProduct.PerformLayout()
         Me.panelPurchase.ResumeLayout(False)
-        Me.panelPurchase.PerformLayout()
         Me.panelOrder.ResumeLayout(False)
         Me.panelOrder.PerformLayout()
         Me.ResumeLayout(False)
@@ -488,39 +344,27 @@ Partial Class frmPOS
     Friend WithEvents panelProduct As System.Windows.Forms.Panel
     Friend WithEvents panelPurchase As System.Windows.Forms.Panel
     Friend WithEvents btnPurchase As System.Windows.Forms.Button
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents panelOrder As System.Windows.Forms.Panel
-    Friend WithEvents lblORno As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents tbcustomer As System.Windows.Forms.TextBox
     Friend WithEvents lvorder As System.Windows.Forms.ListView
     Friend WithEvents ColumnHeader6 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader7 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader8 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader11 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents lblNotify As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents tbsearch As System.Windows.Forms.TextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents tbcash As System.Windows.Forms.TextBox
-    Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents lblchange As System.Windows.Forms.Label
-    Friend WithEvents lbltotal As System.Windows.Forms.Label
     Friend WithEvents lvProducts As System.Windows.Forms.ListView
     Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader5 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents lblitems As System.Windows.Forms.Label
-    Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents btncancel As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents cboSortby As System.Windows.Forms.ComboBox
-
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

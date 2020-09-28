@@ -31,6 +31,8 @@ Partial Class frmInventory
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -39,7 +41,7 @@ Partial Class frmInventory
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.pndetails = New System.Windows.Forms.Panel()
-        Me.tbpass = New System.Windows.Forms.TextBox()
+        Me.tblocation = New System.Windows.Forms.TextBox()
         Me.tbpurchase = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.tbname = New System.Windows.Forms.TextBox()
@@ -56,6 +58,10 @@ Partial Class frmInventory
         Me.btnadd = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.tbsupplier = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.cbstatus = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.pndetails.SuspendLayout()
@@ -73,21 +79,21 @@ Partial Class frmInventory
         Me.Panel1.ForeColor = System.Drawing.SystemColors.ButtonShadow
         Me.Panel1.Location = New System.Drawing.Point(7, 41)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(779, 549)
+        Me.Panel1.Size = New System.Drawing.Size(779, 601)
         Me.Panel1.TabIndex = 24
         '
         'lvProducts
         '
         Me.lvProducts.BackColor = System.Drawing.Color.White
         Me.lvProducts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lvProducts.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader4, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader5, Me.ColumnHeader7, Me.ColumnHeader6})
+        Me.lvProducts.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader4, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader5, Me.ColumnHeader7, Me.ColumnHeader6, Me.ColumnHeader8, Me.ColumnHeader9})
         Me.lvProducts.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvProducts.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lvProducts.FullRowSelect = True
         Me.lvProducts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.lvProducts.Location = New System.Drawing.Point(17, 98)
         Me.lvProducts.Name = "lvProducts"
-        Me.lvProducts.Size = New System.Drawing.Size(735, 433)
+        Me.lvProducts.Size = New System.Drawing.Size(735, 485)
         Me.lvProducts.TabIndex = 39
         Me.lvProducts.UseCompatibleStateImageBehavior = False
         Me.lvProducts.View = System.Windows.Forms.View.Details
@@ -99,33 +105,41 @@ Partial Class frmInventory
         '
         'ColumnHeader4
         '
-        Me.ColumnHeader4.Text = "Category"
-        Me.ColumnHeader4.Width = 139
+        Me.ColumnHeader4.Text = "Type"
+        Me.ColumnHeader4.Width = 100
         '
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "Name"
-        Me.ColumnHeader2.Width = 157
+        Me.ColumnHeader2.Width = 100
         '
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "Price"
-        Me.ColumnHeader3.Width = 98
         '
         'ColumnHeader5
         '
         Me.ColumnHeader5.Text = "Stock"
-        Me.ColumnHeader5.Width = 86
         '
         'ColumnHeader7
         '
         Me.ColumnHeader7.Text = "Purchase Date"
-        Me.ColumnHeader7.Width = 152
+        Me.ColumnHeader7.Width = 150
         '
         'ColumnHeader6
         '
-        Me.ColumnHeader6.Text = "Pass Date"
-        Me.ColumnHeader6.Width = 92
+        Me.ColumnHeader6.Text = "Location"
+        Me.ColumnHeader6.Width = 90
+        '
+        'ColumnHeader8
+        '
+        Me.ColumnHeader8.Text = "Status"
+        Me.ColumnHeader8.Width = 70
+        '
+        'ColumnHeader9
+        '
+        Me.ColumnHeader9.Text = "Supplier"
+        Me.ColumnHeader9.Width = 100
         '
         'Label7
         '
@@ -134,9 +148,9 @@ Partial Class frmInventory
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.Label7.Location = New System.Drawing.Point(16, 11)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(148, 21)
+        Me.Label7.Size = New System.Drawing.Size(123, 21)
         Me.Label7.TabIndex = 38
-        Me.Label7.Text = "- Search Product -"
+        Me.Label7.Text = "- Search Item -"
         '
         'Label6
         '
@@ -145,9 +159,9 @@ Partial Class frmInventory
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(13, 73)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(113, 21)
+        Me.Label6.Size = New System.Drawing.Size(88, 21)
         Me.Label6.TabIndex = 37
-        Me.Label6.Text = "- Product list -"
+        Me.Label6.Text = "- Item list -"
         '
         'Label9
         '
@@ -178,9 +192,9 @@ Partial Class frmInventory
         Me.Category.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.Category.Location = New System.Drawing.Point(12, 18)
         Me.Category.Name = "Category"
-        Me.Category.Size = New System.Drawing.Size(151, 21)
+        Me.Category.Size = New System.Drawing.Size(126, 21)
         Me.Category.TabIndex = 25
-        Me.Category.Text = "Product Category"
+        Me.Category.Text = "Item Category"
         '
         'Panel2
         '
@@ -195,13 +209,13 @@ Partial Class frmInventory
         Me.Panel2.ForeColor = System.Drawing.SystemColors.ButtonShadow
         Me.Panel2.Location = New System.Drawing.Point(779, 41)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(269, 549)
+        Me.Panel2.Size = New System.Drawing.Size(269, 601)
         Me.Panel2.TabIndex = 28
         '
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel4.Location = New System.Drawing.Point(16, 382)
+        Me.Panel4.Location = New System.Drawing.Point(16, 486)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(235, 1)
         Me.Panel4.TabIndex = 46
@@ -209,12 +223,16 @@ Partial Class frmInventory
         'pndetails
         '
         Me.pndetails.BackColor = System.Drawing.Color.White
-        Me.pndetails.Controls.Add(Me.tbpass)
+        Me.pndetails.Controls.Add(Me.tbsupplier)
+        Me.pndetails.Controls.Add(Me.tblocation)
         Me.pndetails.Controls.Add(Me.tbpurchase)
+        Me.pndetails.Controls.Add(Me.Label11)
+        Me.pndetails.Controls.Add(Me.Label1)
         Me.pndetails.Controls.Add(Me.Label10)
         Me.pndetails.Controls.Add(Me.Category)
         Me.pndetails.Controls.Add(Me.tbname)
         Me.pndetails.Controls.Add(Me.Label8)
+        Me.pndetails.Controls.Add(Me.cbstatus)
         Me.pndetails.Controls.Add(Me.cbocategory)
         Me.pndetails.Controls.Add(Me.Label2)
         Me.pndetails.Controls.Add(Me.tbprice)
@@ -225,19 +243,19 @@ Partial Class frmInventory
         Me.pndetails.ForeColor = System.Drawing.SystemColors.ButtonShadow
         Me.pndetails.Location = New System.Drawing.Point(0, -6)
         Me.pndetails.Name = "pndetails"
-        Me.pndetails.Size = New System.Drawing.Size(269, 383)
+        Me.pndetails.Size = New System.Drawing.Size(269, 486)
         Me.pndetails.TabIndex = 41
         '
-        'tbpass
+        'tblocation
         '
-        Me.tbpass.BackColor = System.Drawing.Color.White
-        Me.tbpass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbpass.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbpass.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.tbpass.Location = New System.Drawing.Point(16, 334)
-        Me.tbpass.Name = "tbpass"
-        Me.tbpass.Size = New System.Drawing.Size(235, 31)
-        Me.tbpass.TabIndex = 41
+        Me.tblocation.BackColor = System.Drawing.Color.White
+        Me.tblocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tblocation.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tblocation.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.tblocation.Location = New System.Drawing.Point(17, 334)
+        Me.tblocation.Name = "tblocation"
+        Me.tblocation.Size = New System.Drawing.Size(235, 31)
+        Me.tblocation.TabIndex = 41
         '
         'tbpurchase
         '
@@ -257,9 +275,9 @@ Partial Class frmInventory
         Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.Label10.Location = New System.Drawing.Point(13, 310)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(86, 21)
+        Me.Label10.Size = New System.Drawing.Size(78, 21)
         Me.Label10.TabIndex = 39
-        Me.Label10.Text = "Pass Date"
+        Me.Label10.Text = "Location"
         '
         'tbname
         '
@@ -303,9 +321,9 @@ Partial Class frmInventory
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(13, 78)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(124, 21)
+        Me.Label2.Size = New System.Drawing.Size(99, 21)
         Me.Label2.TabIndex = 29
-        Me.Label2.Text = "Product Name"
+        Me.Label2.Text = "Item Name"
         '
         'tbprice
         '
@@ -325,9 +343,9 @@ Partial Class frmInventory
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(13, 136)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(113, 21)
+        Me.Label3.Size = New System.Drawing.Size(88, 21)
         Me.Label3.TabIndex = 31
-        Me.Label3.Text = "Product Price"
+        Me.Label3.Text = "Item Price"
         '
         'tbstock
         '
@@ -358,9 +376,9 @@ Partial Class frmInventory
         Me.btnclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnclear.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnclear.ForeColor = System.Drawing.Color.Teal
-        Me.btnclear.Location = New System.Drawing.Point(140, 474)
+        Me.btnclear.Location = New System.Drawing.Point(140, 540)
         Me.btnclear.Name = "btnclear"
-        Me.btnclear.Size = New System.Drawing.Size(111, 58)
+        Me.btnclear.Size = New System.Drawing.Size(111, 43)
         Me.btnclear.TabIndex = 36
         Me.btnclear.Text = "Clear"
         Me.btnclear.UseVisualStyleBackColor = True
@@ -372,9 +390,9 @@ Partial Class frmInventory
         Me.btndelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btndelete.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btndelete.ForeColor = System.Drawing.Color.Crimson
-        Me.btndelete.Location = New System.Drawing.Point(16, 474)
+        Me.btndelete.Location = New System.Drawing.Point(16, 540)
         Me.btndelete.Name = "btndelete"
-        Me.btndelete.Size = New System.Drawing.Size(111, 58)
+        Me.btndelete.Size = New System.Drawing.Size(111, 43)
         Me.btndelete.TabIndex = 35
         Me.btndelete.Text = "Delete"
         Me.btndelete.UseVisualStyleBackColor = True
@@ -386,9 +404,9 @@ Partial Class frmInventory
         Me.btnedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnedit.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnedit.ForeColor = System.Drawing.Color.Teal
-        Me.btnedit.Location = New System.Drawing.Point(140, 407)
+        Me.btnedit.Location = New System.Drawing.Point(140, 493)
         Me.btnedit.Name = "btnedit"
-        Me.btnedit.Size = New System.Drawing.Size(111, 58)
+        Me.btnedit.Size = New System.Drawing.Size(111, 41)
         Me.btnedit.TabIndex = 34
         Me.btnedit.Text = "Update"
         Me.btnedit.UseVisualStyleBackColor = True
@@ -400,9 +418,9 @@ Partial Class frmInventory
         Me.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnadd.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnadd.ForeColor = System.Drawing.Color.Teal
-        Me.btnadd.Location = New System.Drawing.Point(16, 407)
+        Me.btnadd.Location = New System.Drawing.Point(16, 493)
         Me.btnadd.Name = "btnadd"
-        Me.btnadd.Size = New System.Drawing.Size(111, 58)
+        Me.btnadd.Size = New System.Drawing.Size(111, 41)
         Me.btnadd.TabIndex = 28
         Me.btnadd.Text = "Add"
         Me.btnadd.UseVisualStyleBackColor = True
@@ -433,12 +451,58 @@ Partial Class frmInventory
         Me.Button1.Text = " X"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(12, 368)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(71, 21)
+        Me.Label1.TabIndex = 39
+        Me.Label1.Text = "Supplier"
+        '
+        'tbsupplier
+        '
+        Me.tbsupplier.BackColor = System.Drawing.Color.White
+        Me.tbsupplier.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbsupplier.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbsupplier.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.tbsupplier.Location = New System.Drawing.Point(17, 392)
+        Me.tbsupplier.Name = "tbsupplier"
+        Me.tbsupplier.Size = New System.Drawing.Size(235, 31)
+        Me.tbsupplier.TabIndex = 41
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Label11.Location = New System.Drawing.Point(13, 426)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(59, 21)
+        Me.Label11.TabIndex = 39
+        Me.Label11.Text = "Status"
+        '
+        'cbstatus
+        '
+        Me.cbstatus.BackColor = System.Drawing.Color.White
+        Me.cbstatus.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cbstatus.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbstatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.cbstatus.FormattingEnabled = True
+        Me.cbstatus.Location = New System.Drawing.Point(17, 450)
+        Me.cbstatus.Name = "cbstatus"
+        Me.cbstatus.Size = New System.Drawing.Size(235, 32)
+        Me.cbstatus.TabIndex = 27
+        Me.cbstatus.Text = "Select"
+        '
         'frmInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MediumSlateBlue
-        Me.ClientSize = New System.Drawing.Size(1056, 598)
+        Me.ClientSize = New System.Drawing.Size(1068, 654)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Panel2)
@@ -485,10 +549,15 @@ Partial Class frmInventory
     Friend WithEvents ColumnHeader5 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader7 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader6 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents tbpass As System.Windows.Forms.TextBox
+    Friend WithEvents tblocation As System.Windows.Forms.TextBox
     Friend WithEvents tbpurchase As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
-
+    Friend WithEvents ColumnHeader8 As ColumnHeader
+    Friend WithEvents ColumnHeader9 As ColumnHeader
+    Friend WithEvents tbsupplier As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents cbstatus As ComboBox
 End Class

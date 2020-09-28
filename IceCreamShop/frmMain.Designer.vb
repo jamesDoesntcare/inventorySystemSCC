@@ -34,22 +34,19 @@ Partial Class frmMain
         Me.lblTime = New System.Windows.Forms.Label()
         Me.lblUser = New System.Windows.Forms.Label()
         Me.tmrDate = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnreport = New System.Windows.Forms.Button()
         Me.btninventory = New System.Windows.Forms.Button()
         Me.btnpos = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.MenuStrip1.BackColor = System.Drawing.Color.ForestGreen
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuStrip1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(2, 2, 0, 4)
@@ -57,51 +54,54 @@ Partial Class frmMain
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(10, 15, 0, 3)
-        Me.MenuStrip1.Size = New System.Drawing.Size(129, 614)
+        Me.MenuStrip1.Size = New System.Drawing.Size(125, 614)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'TransactionToolStripMenuItem
         '
         Me.TransactionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InventoryToolStripMenuItem, Me.orderingToolStripMenuItem})
-        Me.TransactionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TransactionToolStripMenuItem.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TransactionToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.TransactionToolStripMenuItem.Name = "TransactionToolStripMenuItem"
-        Me.TransactionToolStripMenuItem.Size = New System.Drawing.Size(108, 25)
+        Me.TransactionToolStripMenuItem.Size = New System.Drawing.Size(104, 23)
         Me.TransactionToolStripMenuItem.Text = "Transactions"
         Me.TransactionToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'InventoryToolStripMenuItem
         '
         Me.InventoryToolStripMenuItem.Name = "InventoryToolStripMenuItem"
-        Me.InventoryToolStripMenuItem.Size = New System.Drawing.Size(155, 26)
+        Me.InventoryToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
         Me.InventoryToolStripMenuItem.Text = "Inventory"
         '
         'orderingToolStripMenuItem
         '
         Me.orderingToolStripMenuItem.Name = "orderingToolStripMenuItem"
-        Me.orderingToolStripMenuItem.Size = New System.Drawing.Size(155, 26)
+        Me.orderingToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
         Me.orderingToolStripMenuItem.Text = "POS"
         '
         'ReportsToolStripMenuItem
         '
         Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.POSToolStripMenuItem})
-        Me.ReportsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ReportsToolStripMenuItem.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ReportsToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
-        Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(108, 25)
+        Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(104, 23)
         Me.ReportsToolStripMenuItem.Text = "Reports"
         Me.ReportsToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'POSToolStripMenuItem
         '
         Me.POSToolStripMenuItem.Name = "POSToolStripMenuItem"
-        Me.POSToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.POSToolStripMenuItem.Size = New System.Drawing.Size(176, 24)
         Me.POSToolStripMenuItem.Text = "Sales Reports"
         '
         'LogoutToolStripMenuItem
         '
-        Me.LogoutToolStripMenuItem.ForeColor = System.Drawing.Color.Crimson
+        Me.LogoutToolStripMenuItem.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LogoutToolStripMenuItem.ForeColor = System.Drawing.Color.Red
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(108, 25)
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(104, 23)
         Me.LogoutToolStripMenuItem.Text = "Logout"
         Me.LogoutToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -146,34 +146,24 @@ Partial Class frmMain
         Me.tmrDate.Enabled = True
         Me.tmrDate.Interval = 1000
         '
-        'Panel1
-        '
-        Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Panel1.BackColor = System.Drawing.Color.Goldenrod
-        Me.Panel1.ForeColor = System.Drawing.Color.Goldenrod
-        Me.Panel1.Location = New System.Drawing.Point(240, 144)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(11, 197)
-        Me.Panel1.TabIndex = 12
-        '
         'Label4
         '
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 54.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Goldenrod
-        Me.Label4.Location = New System.Drawing.Point(246, 135)
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(441, 122)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(414, 87)
+        Me.Label4.Size = New System.Drawing.Size(191, 87)
         Me.Label4.TabIndex = 27
-        Me.Label4.Text = "NVENTORY"
+        Me.Label4.Text = "SCC"
         '
         'Panel2
         '
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.ForestGreen
         Me.Panel2.Controls.Add(Me.btnreport)
         Me.Panel2.Controls.Add(Me.btninventory)
         Me.Panel2.Controls.Add(Me.btnpos)
@@ -182,19 +172,19 @@ Partial Class frmMain
         Me.Panel2.Controls.Add(Me.lblTime)
         Me.Panel2.Location = New System.Drawing.Point(-2, 501)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(911, 114)
+        Me.Panel2.Size = New System.Drawing.Size(917, 114)
         Me.Panel2.TabIndex = 13
         '
         'btnreport
         '
         Me.btnreport.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.btnreport.BackColor = System.Drawing.Color.IndianRed
+        Me.btnreport.BackColor = System.Drawing.Color.ForestGreen
         Me.btnreport.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnreport.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed
+        Me.btnreport.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen
         Me.btnreport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnreport.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnreport.ForeColor = System.Drawing.Color.White
-        Me.btnreport.Location = New System.Drawing.Point(341, 13)
+        Me.btnreport.Font = New System.Drawing.Font("Century Gothic", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnreport.ForeColor = System.Drawing.Color.Black
+        Me.btnreport.Location = New System.Drawing.Point(347, 13)
         Me.btnreport.Name = "btnreport"
         Me.btnreport.Size = New System.Drawing.Size(178, 88)
         Me.btnreport.TabIndex = 31
@@ -204,13 +194,13 @@ Partial Class frmMain
         'btninventory
         '
         Me.btninventory.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.btninventory.BackColor = System.Drawing.Color.MediumSlateBlue
+        Me.btninventory.BackColor = System.Drawing.Color.ForestGreen
         Me.btninventory.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btninventory.FlatAppearance.BorderColor = System.Drawing.Color.MediumSlateBlue
+        Me.btninventory.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen
         Me.btninventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btninventory.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btninventory.ForeColor = System.Drawing.Color.White
-        Me.btninventory.Location = New System.Drawing.Point(531, 13)
+        Me.btninventory.Font = New System.Drawing.Font("Century Gothic", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btninventory.ForeColor = System.Drawing.Color.Black
+        Me.btninventory.Location = New System.Drawing.Point(537, 13)
         Me.btninventory.Name = "btninventory"
         Me.btninventory.Size = New System.Drawing.Size(178, 88)
         Me.btninventory.TabIndex = 30
@@ -220,13 +210,13 @@ Partial Class frmMain
         'btnpos
         '
         Me.btnpos.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.btnpos.BackColor = System.Drawing.Color.Teal
+        Me.btnpos.BackColor = System.Drawing.Color.ForestGreen
         Me.btnpos.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnpos.FlatAppearance.BorderColor = System.Drawing.Color.Teal
+        Me.btnpos.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen
         Me.btnpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnpos.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnpos.ForeColor = System.Drawing.Color.White
-        Me.btnpos.Location = New System.Drawing.Point(721, 13)
+        Me.btnpos.Font = New System.Drawing.Font("Century Gothic", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnpos.ForeColor = System.Drawing.Color.Black
+        Me.btnpos.Location = New System.Drawing.Point(727, 13)
         Me.btnpos.Name = "btnpos"
         Me.btnpos.Size = New System.Drawing.Size(178, 88)
         Me.btnpos.TabIndex = 29
@@ -238,11 +228,12 @@ Partial Class frmMain
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 110.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(229, 185)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(89, 185)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(587, 177)
+        Me.Label1.Size = New System.Drawing.Size(877, 177)
         Me.Label1.TabIndex = 28
+<<<<<<< HEAD
         Me.Label1.Text = "SYSTEM"
         '
         'Label2
@@ -269,24 +260,24 @@ Partial Class frmMain
         Me.Label3.Size = New System.Drawing.Size(132, 115)
         Me.Label3.TabIndex = 33
         Me.Label3.Text = "O"
+=======
+        Me.Label1.Text = "INVENTORY"
+>>>>>>> f4317184bd6d36e0f7206af3448ceeb64105c3af
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(909, 614)
-        Me.Controls.Add(Me.Label2)
+        Me.ClientSize = New System.Drawing.Size(915, 614)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Ice Cream Store"
+        Me.Text = "INVENTORY"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -306,7 +297,6 @@ Partial Class frmMain
     Friend WithEvents lblTime As System.Windows.Forms.Label
     Friend WithEvents lblUser As System.Windows.Forms.Label
     Friend WithEvents tmrDate As System.Windows.Forms.Timer
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents btnreport As System.Windows.Forms.Button
@@ -314,6 +304,4 @@ Partial Class frmMain
     Friend WithEvents btnpos As System.Windows.Forms.Button
     Friend WithEvents LogoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class

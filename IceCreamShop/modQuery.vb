@@ -4,20 +4,21 @@
         Connected()
         With lv
             .Items.Clear()
-            sql = " SELECT * FROM tblproducts"
+            sql = "SELECT * from Item"
             CommandDB()
             dr = cmd.ExecuteReader()
             lv.Items.Clear()
             While (dr.Read())
-                With lv.Items.Add(dr("id"))
-                    .SubItems.Add(dr("prod_category"))
-                    .SubItems.Add(dr("prod_name"))
-                    .SubItems.Add(dr("prod_price"))
-                    .SubItems.Add(dr("prod_stock"))
-                    .SubItems.Add(dr("prod_purchasedate"))
-                    .SubItems.Add(dr("prod_passdate"))
+                With lv.Items.Add(dr("item_id"))
+                    .SubItems.Add(dr("item_type"))
+                    .SubItems.Add(dr("item_brand"))
+                    .SubItems.Add(dr("item_price"))
+                    .SubItems.Add(dr("item_stock"))
+                    .SubItems.Add(dr("item_datepurchase"))
+                    .SubItems.Add(dr("item_location"))
+                    .SubItems.Add(dr("item_status"))
+                    .SubItems.Add(dr("item_supplier"))
                 End With
-
             End While
         End With
     End Sub
@@ -58,11 +59,12 @@
     Public Sub PopulateCategory(ByVal cbo As ComboBox)
         Connected()
         cbo.Items.Clear()
-        sql = " SELECT distinct prod_category FROM tblproducts"
+        sql = " SELECT distinct item_type FROM Item"
         CommandDB()
         dr = cmd.ExecuteReader()
         While (dr.Read())
             cbo.Items.Add(dr(0))
+
         End While
     End Sub
 
@@ -70,18 +72,20 @@
         Connected()
         Dim result As String = ""
         Dim key As String = "'%" & search & "%'"
-        sql = " SELECT * FROM tblproducts WHERE prod_name LIKE " & key & " or prod_category LIKE " & key & " order by " & orderBy & ""
+        sql = " SELECT * FROM item WHERE item_brand LIKE " & key & " or item_type LIKE " & key & " order by " & orderBy & ""
         CommandDB()
         dr = cmd.ExecuteReader()
         lv.Items.Clear()
         While (dr.Read())
-            With lv.Items.Add(dr("id"))
-                .SubItems.Add(dr("prod_category"))
-                .SubItems.Add(dr("prod_name"))
-                .SubItems.Add(dr("prod_price"))
-                .SubItems.Add(dr("prod_stock"))
-                .SubItems.Add(dr("prod_purchasedate"))
-                .SubItems.Add(dr("prod_passdate"))
+            With lv.Items.Add(dr("item_id"))
+                .SubItems.Add(dr("item_type"))
+                .SubItems.Add(dr("item_brand"))
+                .SubItems.Add(dr("item_price"))
+                .SubItems.Add(dr("item_stock"))
+                .SubItems.Add(dr("item_datepurchase"))
+                .SubItems.Add(dr("item_location"))
+                .SubItems.Add(dr("item_status"))
+                .SubItems.Add(dr("item_supplier"))
             End With
 
         End While

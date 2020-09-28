@@ -54,9 +54,9 @@ Partial Class frmSalesReport
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(4, 8)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(147, 24)
+        Me.Label4.Size = New System.Drawing.Size(232, 24)
         Me.Label4.TabIndex = 26
-        Me.Label4.Text = "SALES REPORT"
+        Me.Label4.Text = "TRANSACTION REPORT"
         '
         'Label1
         '
@@ -191,7 +191,7 @@ Partial Class frmSalesReport
         Me.lvsales.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lvsales.FullRowSelect = True
         Me.lvsales.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        Me.lvsales.Location = New System.Drawing.Point(19, 36)
+        Me.lvsales.Location = New System.Drawing.Point(20, 36)
         Me.lvsales.Name = "lvsales"
         Me.lvsales.Size = New System.Drawing.Size(1004, 465)
         Me.lvsales.TabIndex = 35
