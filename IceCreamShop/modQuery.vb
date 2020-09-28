@@ -72,7 +72,7 @@
         Connected()
         Dim result As String = ""
         Dim key As String = "'%" & search & "%'"
-        sql = " SELECT * FROM item WHERE item_brand LIKE " & key & " or item_type LIKE " & key & " order by " & orderBy & ""
+        sql = " SELECT * FROM item WHERE item_brand LIKE " & key & " or item_type LIKE " & key & ""
         CommandDB()
         dr = cmd.ExecuteReader()
         lv.Items.Clear()
