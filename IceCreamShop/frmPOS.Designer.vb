@@ -38,6 +38,7 @@ Partial Class frmPOS
         Me.btnPurchase = New System.Windows.Forms.Button()
         Me.btncancel = New System.Windows.Forms.Button()
         Me.panelOrder = New System.Windows.Forms.Panel()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lvorder = New System.Windows.Forms.ListView()
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -47,7 +48,6 @@ Partial Class frmPOS
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.panelProduct.SuspendLayout()
         Me.panelPurchase.SuspendLayout()
         Me.panelOrder.SuspendLayout()
@@ -174,9 +174,9 @@ Partial Class frmPOS
         Me.panelPurchase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panelPurchase.Controls.Add(Me.btnPurchase)
         Me.panelPurchase.ForeColor = System.Drawing.SystemColors.ButtonShadow
-        Me.panelPurchase.Location = New System.Drawing.Point(571, 462)
+        Me.panelPurchase.Location = New System.Drawing.Point(571, 482)
         Me.panelPurchase.Name = "panelPurchase"
-        Me.panelPurchase.Size = New System.Drawing.Size(479, 214)
+        Me.panelPurchase.Size = New System.Drawing.Size(479, 194)
         Me.panelPurchase.TabIndex = 28
         '
         'btnPurchase
@@ -222,6 +222,17 @@ Partial Class frmPOS
         Me.panelOrder.Name = "panelOrder"
         Me.panelOrder.Size = New System.Drawing.Size(479, 439)
         Me.panelOrder.TabIndex = 29
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.ItemHeight = 17
+        Me.ComboBox1.Location = New System.Drawing.Point(20, 49)
+        Me.ComboBox1.MaximumSize = New System.Drawing.Size(300, 0)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(273, 25)
+        Me.ComboBox1.TabIndex = 39
         '
         'Label8
         '
@@ -305,17 +316,6 @@ Partial Class frmPOS
         Me.Button1.TabIndex = 40
         Me.Button1.Text = " X"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.ItemHeight = 17
-        Me.ComboBox1.Location = New System.Drawing.Point(20, 49)
-        Me.ComboBox1.MaximumSize = New System.Drawing.Size(300, 0)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(273, 25)
-        Me.ComboBox1.TabIndex = 39
         '
         'frmPOS
         '
