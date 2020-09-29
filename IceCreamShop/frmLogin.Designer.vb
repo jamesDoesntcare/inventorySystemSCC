@@ -68,7 +68,7 @@ Partial Class frmLogin
         Me.cbopos.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbopos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.cbopos.FormattingEnabled = True
-        Me.cbopos.Items.AddRange(New Object() {"Employee", "Manager"})
+        Me.cbopos.Items.AddRange(New Object() {"Employee", "Manager", "admin"})
         Me.cbopos.Location = New System.Drawing.Point(119, 104)
         Me.cbopos.Name = "cbopos"
         Me.cbopos.Size = New System.Drawing.Size(232, 32)
