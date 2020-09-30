@@ -3,13 +3,15 @@
 Public Class frmPOS
 
     Dim id As Integer
+    Dim itemID As Integer
     Dim itemType As String
     Dim itemname As String
     Dim itemprice As Double
     Dim itemstock As Integer
     Dim enterQty As Integer
     Dim subtotal As Double
- 
+    Dim enterSN As Integer
+
     Dim moveObject As New MoveObject
     Dim pos As Point
 
@@ -79,6 +81,14 @@ Public Class frmPOS
             Exit Sub
         End If
 
+        enterSN = Val(InputBox("Product name: " & id & vbNewLine & "Product Name: " & itemname, "Enter Serial Number".ToUpper, 1))
+        If enterSN = Nothing Then
+            setNotif("There is no enough Stock!", Alert.Warning)
+        End If
+
+
+
+
         'enable button cancel transaction 
         btncancel.Enabled = True
 
@@ -103,8 +113,9 @@ Public Class frmPOS
         Dim newsubtotal As Integer
 
         With lvorder.SelectedItems(0)
-            itemname = .SubItems(0).Text
-            qtyorder = .SubItems(2).Text
+            itemID = .SubItems(1).Text
+            itemname = .SubItems(2).Text
+            qtyorder = .SubItems(3).Text
         End With
 
         Dim enterOrder As Integer = Val(InputBox("Product name: " & itemname & vbNewLine & "", "Enter Quantity Return".ToUpper, 1))
@@ -116,6 +127,7 @@ Public Class frmPOS
             setNotif("Quantity return is more than quantity ordered!", Alert.Warning)
             Exit Sub
         End If
+
 
 
         'update new subtotal
@@ -253,7 +265,6 @@ Public Class frmPOS
         If indexRow.hasRow() Then
             'update qty and subtotal
             lvorder.Items(index).SubItems(2).Text += _qty
-            lvorder.Items(index).SubItems(3).Text += _subTotal
 
             'if qty = 0 then remove to list
             If lvorder.Items(index).SubItems(2).Text = 0 Then
@@ -261,10 +272,10 @@ Public Class frmPOS
             End If
         Else
             'add item
-            With lvorder.Items.Add(itemname)
-                .SubItems.Add(itemprice)
+            With lvorder.Items.Add(id)
+                .SubItems.Add(itemname)
                 .SubItems.Add(enterQty)
-                .SubItems.Add(subtotal)
+                .SubItems.Add(enterSN)
             End With
         End If
     End Sub

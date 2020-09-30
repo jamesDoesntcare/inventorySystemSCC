@@ -146,7 +146,7 @@ Public Class frmInventory
     Sub DeleteData()
         Connected()
         Dim i As Integer
-        sql = "DELETE FROM tblproducts WHERE id = " & id & ""
+        sql = "DELETE FROM Item WHERE item_id = " & id & ""
         'validattion
         If id = "0" Then
             MsgBox("Select on product list", MsgBoxStyle.Exclamation)

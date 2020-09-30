@@ -48,10 +48,10 @@ Partial Class frmPOS
         Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.panelProduct.SuspendLayout()
         Me.panelPurchase.SuspendLayout()
         Me.panelOrder.SuspendLayout()
@@ -227,7 +227,7 @@ Partial Class frmPOS
         Me.btnPurchase.Name = "btnPurchase"
         Me.btnPurchase.Size = New System.Drawing.Size(129, 50)
         Me.btnPurchase.TabIndex = 28
-        Me.btnPurchase.Text = "PURCHASE"
+        Me.btnPurchase.Text = "ASSIGN"
         Me.btnPurchase.UseVisualStyleBackColor = True
         '
         'btncancel
@@ -288,7 +288,7 @@ Partial Class frmPOS
         '
         Me.lvorder.BackColor = System.Drawing.Color.White
         Me.lvorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lvorder.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11})
+        Me.lvorder.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader11, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10})
         Me.lvorder.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvorder.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lvorder.FullRowSelect = True
@@ -303,19 +303,17 @@ Partial Class frmPOS
         'ColumnHeader8
         '
         Me.ColumnHeader8.Text = "Name"
+        Me.ColumnHeader8.Width = 125
         '
         'ColumnHeader9
         '
         Me.ColumnHeader9.Text = "Quantity"
-        Me.ColumnHeader9.Width = 90
+        Me.ColumnHeader9.Width = 125
         '
         'ColumnHeader10
         '
-        Me.ColumnHeader10.Width = 137
-        '
-        'ColumnHeader11
-        '
-        Me.ColumnHeader11.Width = 136
+        Me.ColumnHeader10.Text = "Serial Number"
+        Me.ColumnHeader10.Width = 140
         '
         'Label12
         '
@@ -352,6 +350,11 @@ Partial Class frmPOS
         Me.Button1.TabIndex = 40
         Me.Button1.Text = " X"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'ColumnHeader11
+        '
+        Me.ColumnHeader11.Text = "ID"
+        Me.ColumnHeader11.Width = 0
         '
         'frmPOS
         '
@@ -405,7 +408,7 @@ Partial Class frmPOS
     Friend WithEvents ColumnHeader8 As ColumnHeader
     Friend WithEvents ColumnHeader9 As ColumnHeader
     Friend WithEvents ColumnHeader10 As ColumnHeader
-    Friend WithEvents ColumnHeader11 As ColumnHeader
     Friend WithEvents lblOrno As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents ColumnHeader11 As ColumnHeader
 End Class
