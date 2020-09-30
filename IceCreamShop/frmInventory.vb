@@ -186,7 +186,6 @@ Public Class frmInventory
 
     Sub getDate()
         tbpurchase.Text = Format(Now, "short date")
-        tblocation.Text = Format(Now, "short date")
     End Sub
 
 #End Region

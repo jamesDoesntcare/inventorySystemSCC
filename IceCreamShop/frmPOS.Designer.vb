@@ -27,23 +27,27 @@ Partial Class frmPOS
         Me.lblNotify = New System.Windows.Forms.Label()
         Me.lvProducts = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.tbsearch = New System.Windows.Forms.TextBox()
         Me.panelPurchase = New System.Windows.Forms.Panel()
+        Me.lblOrno = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnPurchase = New System.Windows.Forms.Button()
         Me.btncancel = New System.Windows.Forms.Button()
         Me.panelOrder = New System.Windows.Forms.Panel()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cboEmployee = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lvorder = New System.Windows.Forms.ListView()
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -98,7 +102,7 @@ Partial Class frmPOS
         '
         Me.lvProducts.BackColor = System.Drawing.Color.White
         Me.lvProducts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lvProducts.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader4, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader5})
+        Me.lvProducts.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7})
         Me.lvProducts.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvProducts.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lvProducts.FullRowSelect = True
@@ -115,25 +119,34 @@ Partial Class frmPOS
         Me.ColumnHeader1.Text = "ID"
         Me.ColumnHeader1.Width = 0
         '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "Category"
-        Me.ColumnHeader4.Width = 155
-        '
         'ColumnHeader2
         '
-        Me.ColumnHeader2.Text = "Name"
-        Me.ColumnHeader2.Width = 200
+        Me.ColumnHeader2.Text = "Type"
+        Me.ColumnHeader2.Width = 90
         '
         'ColumnHeader3
         '
-        Me.ColumnHeader3.Text = "Price"
-        Me.ColumnHeader3.Width = 98
+        Me.ColumnHeader3.Text = "Name"
+        Me.ColumnHeader3.Width = 90
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "Stock"
         '
         'ColumnHeader5
         '
-        Me.ColumnHeader5.Text = "Stock"
-        Me.ColumnHeader5.Width = 70
+        Me.ColumnHeader5.Text = "Purchase Date"
+        Me.ColumnHeader5.Width = 120
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "Location"
+        Me.ColumnHeader6.Width = 100
+        '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Text = "Status"
+        Me.ColumnHeader7.Width = 70
         '
         'Label7
         '
@@ -172,12 +185,36 @@ Partial Class frmPOS
         '
         Me.panelPurchase.BackColor = System.Drawing.Color.WhiteSmoke
         Me.panelPurchase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panelPurchase.Controls.Add(Me.lblOrno)
+        Me.panelPurchase.Controls.Add(Me.Label2)
         Me.panelPurchase.Controls.Add(Me.btnPurchase)
         Me.panelPurchase.ForeColor = System.Drawing.SystemColors.ButtonShadow
         Me.panelPurchase.Location = New System.Drawing.Point(571, 482)
         Me.panelPurchase.Name = "panelPurchase"
         Me.panelPurchase.Size = New System.Drawing.Size(479, 194)
         Me.panelPurchase.TabIndex = 28
+        '
+        'lblOrno
+        '
+        Me.lblOrno.AutoSize = True
+        Me.lblOrno.Font = New System.Drawing.Font("Century Gothic", 14.25!)
+        Me.lblOrno.ForeColor = System.Drawing.Color.Teal
+        Me.lblOrno.Location = New System.Drawing.Point(322, 54)
+        Me.lblOrno.Name = "lblOrno"
+        Me.lblOrno.Size = New System.Drawing.Size(112, 22)
+        Me.lblOrno.TabIndex = 34
+        Me.lblOrno.Text = "TRANS1000"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(287, 21)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(168, 21)
+        Me.Label2.TabIndex = 34
+        Me.Label2.Text = "Transaction Number"
         '
         'btnPurchase
         '
@@ -186,7 +223,7 @@ Partial Class frmPOS
         Me.btnPurchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPurchase.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPurchase.ForeColor = System.Drawing.Color.Teal
-        Me.btnPurchase.Location = New System.Drawing.Point(326, 145)
+        Me.btnPurchase.Location = New System.Drawing.Point(313, 133)
         Me.btnPurchase.Name = "btnPurchase"
         Me.btnPurchase.Size = New System.Drawing.Size(129, 50)
         Me.btnPurchase.TabIndex = 28
@@ -212,7 +249,7 @@ Partial Class frmPOS
         '
         Me.panelOrder.BackColor = System.Drawing.Color.WhiteSmoke
         Me.panelOrder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.panelOrder.Controls.Add(Me.ComboBox1)
+        Me.panelOrder.Controls.Add(Me.cboEmployee)
         Me.panelOrder.Controls.Add(Me.btncancel)
         Me.panelOrder.Controls.Add(Me.Label8)
         Me.panelOrder.Controls.Add(Me.lvorder)
@@ -223,16 +260,18 @@ Partial Class frmPOS
         Me.panelOrder.Size = New System.Drawing.Size(479, 439)
         Me.panelOrder.TabIndex = 29
         '
-        'ComboBox1
+        'cboEmployee
         '
-        Me.ComboBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.ItemHeight = 17
-        Me.ComboBox1.Location = New System.Drawing.Point(20, 49)
-        Me.ComboBox1.MaximumSize = New System.Drawing.Size(300, 0)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(273, 25)
-        Me.ComboBox1.TabIndex = 39
+        Me.cboEmployee.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cboEmployee.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboEmployee.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.cboEmployee.FormattingEnabled = True
+        Me.cboEmployee.ItemHeight = 23
+        Me.cboEmployee.Location = New System.Drawing.Point(20, 49)
+        Me.cboEmployee.MaximumSize = New System.Drawing.Size(300, 0)
+        Me.cboEmployee.Name = "cboEmployee"
+        Me.cboEmployee.Size = New System.Drawing.Size(273, 31)
+        Me.cboEmployee.TabIndex = 39
         '
         'Label8
         '
@@ -249,7 +288,7 @@ Partial Class frmPOS
         '
         Me.lvorder.BackColor = System.Drawing.Color.White
         Me.lvorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lvorder.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader11})
+        Me.lvorder.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11})
         Me.lvorder.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvorder.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lvorder.FullRowSelect = True
@@ -261,25 +300,22 @@ Partial Class frmPOS
         Me.lvorder.UseCompatibleStateImageBehavior = False
         Me.lvorder.View = System.Windows.Forms.View.Details
         '
-        'ColumnHeader6
-        '
-        Me.ColumnHeader6.Text = "Name"
-        Me.ColumnHeader6.Width = 148
-        '
-        'ColumnHeader7
-        '
-        Me.ColumnHeader7.Text = "Price"
-        Me.ColumnHeader7.Width = 105
-        '
         'ColumnHeader8
         '
-        Me.ColumnHeader8.Text = "Quantity"
-        Me.ColumnHeader8.Width = 81
+        Me.ColumnHeader8.Text = "Name"
+        '
+        'ColumnHeader9
+        '
+        Me.ColumnHeader9.Text = "Quantity"
+        Me.ColumnHeader9.Width = 90
+        '
+        'ColumnHeader10
+        '
+        Me.ColumnHeader10.Width = 137
         '
         'ColumnHeader11
         '
-        Me.ColumnHeader11.Text = "SubTotal"
-        Me.ColumnHeader11.Width = 98
+        Me.ColumnHeader11.Width = 136
         '
         'Label12
         '
@@ -335,6 +371,7 @@ Partial Class frmPOS
         Me.panelProduct.ResumeLayout(False)
         Me.panelProduct.PerformLayout()
         Me.panelPurchase.ResumeLayout(False)
+        Me.panelPurchase.PerformLayout()
         Me.panelOrder.ResumeLayout(False)
         Me.panelOrder.PerformLayout()
         Me.ResumeLayout(False)
@@ -346,10 +383,6 @@ Partial Class frmPOS
     Friend WithEvents btnPurchase As System.Windows.Forms.Button
     Friend WithEvents panelOrder As System.Windows.Forms.Panel
     Friend WithEvents lvorder As System.Windows.Forms.ListView
-    Friend WithEvents ColumnHeader6 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader7 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader8 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader11 As System.Windows.Forms.ColumnHeader
     Friend WithEvents lblNotify As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
@@ -358,13 +391,21 @@ Partial Class frmPOS
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents lvProducts As System.Windows.Forms.ListView
     Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader5 As System.Windows.Forms.ColumnHeader
     Friend WithEvents btncancel As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents cboSortby As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cboEmployee As ComboBox
+    Friend WithEvents ColumnHeader2 As ColumnHeader
+    Private WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents ColumnHeader4 As ColumnHeader
+    Friend WithEvents ColumnHeader5 As ColumnHeader
+    Friend WithEvents ColumnHeader6 As ColumnHeader
+    Friend WithEvents ColumnHeader7 As ColumnHeader
+    Friend WithEvents ColumnHeader8 As ColumnHeader
+    Friend WithEvents ColumnHeader9 As ColumnHeader
+    Friend WithEvents ColumnHeader10 As ColumnHeader
+    Friend WithEvents ColumnHeader11 As ColumnHeader
+    Friend WithEvents lblOrno As Label
+    Friend WithEvents Label2 As Label
 End Class

@@ -1,5 +1,27 @@
 ﻿Module modquery
 
+
+    Public Sub PopulateProductsPOS(ByVal lv As ListView, ByVal orderBy As String)
+        Connected()
+        With lv
+            .Items.Clear()
+            sql = "SELECT * from Item"
+            CommandDB()
+            dr = cmd.ExecuteReader()
+            lv.Items.Clear()
+            While (dr.Read())
+                With lv.Items.Add(dr("item_id"))
+                    .SubItems.Add(dr("item_type"))
+                    .SubItems.Add(dr("item_brand"))
+                    .SubItems.Add(dr("item_stock"))
+                    .SubItems.Add(dr("item_datepurchase"))
+                    .SubItems.Add(dr("item_location"))
+                    .SubItems.Add(dr("item_status"))
+                End With
+            End While
+        End With
+    End Sub
+
     Public Sub PopulateProducts(ByVal lv As ListView, ByVal orderBy As String)
         Connected()
         With lv
@@ -90,8 +112,16 @@
 
         End While
     End Sub
-
-
+    Public Sub PopulateEmployee(ByVal cbo As ComboBox)
+        Connected()
+        sql = "SELECT distinct emp_firstname FROM Employee"
+        CommandDB()
+        dr = cmd.ExecuteReader()
+        cbo.Items.Clear()
+        While dr.Read()
+            cbo.Items.Add(dr(0))
+        End While
+    End Sub
     Public Function IsProductExist(ByVal tbl As String, ByVal field As String, ByVal str As String) As Boolean
         Connected()
         sql = "Select COUNT(*) FROM " & tbl & " WHERE " & field & " = '" & str & "'"
@@ -103,5 +133,7 @@
             Return False
         End If
     End Function
+
+
 
 End Module

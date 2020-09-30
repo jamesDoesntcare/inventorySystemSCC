@@ -3,10 +3,10 @@
 Public Class frmPOS
 
     Dim id As Integer
-    Dim prodcategory As String
-    Dim prodname As String
-    Dim prodprice As Double
-    Dim prodstock As Integer
+    Dim itemType As String
+    Dim itemname As String
+    Dim itemprice As Double
+    Dim itemstock As Integer
     Dim enterQty As Integer
     Dim subtotal As Double
  
@@ -37,8 +37,8 @@ Public Class frmPOS
     Private Sub frmOrdering_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'load all products in listview
         btncancel.Enabled = False
-        PopulateProducts(lvProducts, getSortby())
-        'lblORno.Text = GenerateOrderNo()
+        PopulateProductsPOS(lvProducts, getSortby())
+        PopulateEmployee(cboEmployee)
         doChangeListViewColor(lvProducts)
         toggleBtnEnabbled()
         setNotif("Double click an item to add and return a products", Alert.Info)
@@ -58,24 +58,23 @@ Public Class frmPOS
         'assign data from listview to variables
         With lvProducts.SelectedItems(0)
             id = .SubItems(0).Text
-            prodcategory = .SubItems(1).Text
-            prodname = .SubItems(2).Text
-            prodprice = .SubItems(3).Text
-            prodstock = .SubItems(4).Text
+            itemType = .SubItems(1).Text
+            itemname = .SubItems(2).Text
+            itemstock = .SubItems(3).Text
         End With
 
-        If prodstock <= 0 Then
+        If itemstock <= 0 Then
             setNotif("Out of Stock!", Alert.Warning)
             Exit Sub
         End If
 
         'enter qty order
-        enterQty = Val(InputBox("Product name: " & prodname & vbNewLine & "Product price: " & prodprice, "Enter Quantity".ToUpper, 1))
+        enterQty = Val(InputBox("Product name: " & itemname & vbNewLine & "Product Available Stock: " & itemstock, "Enter Quantity".ToUpper, 1))
         If enterQty = Nothing Then
             Exit Sub
         End If
 
-        If getProductStock(prodname) < getQuantityOrder(prodname, enterQty) Or enterQty > getQuantityOrder(prodname, enterQty) Then
+        If getProductStock(itemname) < getQuantityOrder(itemname, enterQty) Or enterQty > getQuantityOrder(itemname, enterQty) Then
             setNotif("There is no enough Stock!", Alert.Warning)
             Exit Sub
         End If
@@ -84,7 +83,7 @@ Public Class frmPOS
         btncancel.Enabled = True
 
         'compute subtotal
-        subtotal = enterQty * prodprice
+        subtotal = enterQty * itemprice
 
         'add Quantity and Subtotal in listview Order
         updateQtyListOrder(enterQty, subtotal)
@@ -95,7 +94,7 @@ Public Class frmPOS
         'lblchange.Text = ComputeChange(Val(tbcash.Text), lbltotal.Text)
 
         toggleBtnEnabbled()
-        setNotif("Added " & enterQty & " " & prodname.ToUpper, Alert.Info)
+        setNotif("Added " & enterQty & " " & itemname.ToUpper, Alert.Info)
     End Sub
 
     Private Sub lvorder_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles lvorder.MouseDoubleClick
@@ -104,12 +103,11 @@ Public Class frmPOS
         Dim newsubtotal As Integer
 
         With lvorder.SelectedItems(0)
-            prodname = .SubItems(0).Text
-            prodprice = .SubItems(1).Text
+            itemname = .SubItems(0).Text
             qtyorder = .SubItems(2).Text
         End With
 
-        Dim enterOrder As Integer = Val(InputBox("Product name: " & prodname & vbNewLine & "Product price: " & prodprice, "Enter Quantity Return".ToUpper, 1))
+        Dim enterOrder As Integer = Val(InputBox("Product name: " & itemname & vbNewLine & "", "Enter Quantity Return".ToUpper, 1))
         If enterOrder = Nothing Then
             Exit Sub
         End If
@@ -121,7 +119,7 @@ Public Class frmPOS
 
 
         'update new subtotal
-        newsubtotal = enterOrder * prodprice
+        newsubtotal = enterOrder * itemprice
 
         'minus Quantity and Subtotal in listview Order
         updateQtyListOrder(-enterOrder, -newsubtotal)
@@ -132,7 +130,7 @@ Public Class frmPOS
         'lblchange.Text = ComputeChange(Val(tbcash.Text), Val(lbltotal.Text)).ToString("N")
 
         toggleBtnEnabbled()
-        setNotif("Returned " & enterOrder & " " & prodname.ToUpper, Alert.Info)
+        setNotif("Returned " & enterOrder & " " & itemname.ToUpper, Alert.Info)
     End Sub
 
     Private Sub tbcash_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs)
@@ -164,31 +162,29 @@ Public Class frmPOS
 
 
     Sub doPurchase()
-        'If lvorder.Items.Count = 0 Then
-        '    Exit Sub
-        'End If
+        If lvorder.Items.Count = 0 Then
+            Exit Sub
+        End If
 
         'If Val(tbcash.Text) < Val(lbltotal.Text) Then
         '    setNotif("Insufficient Cash!", Alert.Warning)
         '    Exit Sub
         'End If
 
-        'Me.Enabled = False
-        'Dim confirm = MsgBox("Proceed?" & vbNewLine & vbNewLine & _
-        '       "OR No: " & lblORno.Text.ToUpper & vbNewLine & _
-        '       "Customer Name: " & tbcustomer.Text.ToUpper & vbNewLine & _
-        '       "Total: " & lbltotal.Text & vbNewLine & _
-        '       "Change: " & lblchange.Text & vbNewLine _
-        '       , MsgBoxStyle.YesNo, "Ice Cream Shop")
+        Me.Enabled = False
+        Dim confirm = MsgBox("Proceed?" & vbNewLine & vbNewLine &
+               "Transaction No: " & lblOrno.Text.ToUpper & vbNewLine &
+               "Employee Name: " & cboEmployee.Text.ToUpper & vbNewLine _
+               , MsgBoxStyle.YesNo, "SCC Inventory System")
 
-        'If confirm = MsgBoxResult.No Then
-        '    Me.Enabled = True
-        '    Exit Sub
-        'End If
+        If confirm = MsgBoxResult.No Then
+            Me.Enabled = True
+            Exit Sub
+        End If
 
         saveSales(lvorder)
         mapStock()
-        PopulateProducts(lvProducts, getSortby())
+        PopulateProductsPOS(lvProducts, getSortby())
         doChangeListViewColor(lvProducts)
         resetOrder()
         toggleBtnEnabbled()
@@ -219,21 +215,21 @@ Public Class frmPOS
 
 #Region "local methods"
 
-    Function getQuantityOrder(ByVal _prodname As String, ByVal _enterQty As Integer) As Integer
+    Function getQuantityOrder(ByVal _itemname As String, ByVal _enterQty As Integer) As Integer
         'instantiate
         Dim indexRow As New IndexRow
 
         'initialize index row
         indexRow.ListView = lvorder
         indexRow.Column = 1
-        indexRow.Key = _prodname
+        indexRow.Key = _itemname
 
         If indexRow.hasRow Then
             Dim index As Integer = indexRow.getListIndex()
             Dim quantity As Integer = lvorder.Items(index).SubItems(2).Text
             Return quantity + _enterQty
         Else
-            Return getProductStock(_prodname)
+            Return getProductStock(_itemname)
         End If
     End Function
 
@@ -248,7 +244,7 @@ Public Class frmPOS
         'initialize index row
         indexRow.ListView = lvorder
         indexRow.Column = 1
-        indexRow.Key = prodname
+        indexRow.Key = itemname
 
         'get index row of product by name
         Dim index = indexRow.getListIndex()
@@ -265,8 +261,8 @@ Public Class frmPOS
             End If
         Else
             'add item
-            With lvorder.Items.Add(prodname)
-                .SubItems.Add(prodprice)
+            With lvorder.Items.Add(itemname)
+                .SubItems.Add(itemprice)
                 .SubItems.Add(enterQty)
                 .SubItems.Add(subtotal)
             End With
@@ -298,44 +294,39 @@ Public Class frmPOS
     End Function
 
     Sub saveSales(ByVal listView As ListView)
-        'Dim odate As String = Format(Now, "d")
-        'Dim lv
-        'Dim ctr As Integer
-        'Dim iloop As Integer
-        'ctr = listView.Items.Count()
-        'If Not listView.Items.Count = 0 Then
-        '    Do Until iloop = listView.Items.Count
-        '        lv = listView.Items.Item(iloop)
-        '        With lv
-        '            Connected()
-        '            sql = "INSERT into tblsales (ORno,customer_name,prod_name,prod_price,prod_qty,prod_subtotal,date_order) VALUES ('" & lblORno.Text & "','" & tbcustomer.Text & "','" & .subitems(0).Text.ToUpper & "'," & .subitems(1).Text.ToUpper & "," & .subitems(2).Text.ToUpper & "," & .subitems(3).Text.ToUpper & ",'" & odate.ToString & "')"
-        '            CommandDB()
-        '            cmd.ExecuteNonQuery()
-        '        End With
-        '        iloop = iloop + 1
-        '        lv = Nothing
-        '    Loop
-        'End If
+        Dim odate As String = Format(Now, "d")
+        Dim lv
+        Dim ctr As Integer
+        Dim iloop As Integer
+        ctr = listView.Items.Count()
+        If Not listView.Items.Count = 0 Then
+            Do Until iloop = listView.Items.Count
+                lv = listView.Items.Item(iloop)
+                With lv
+                    Connected()
+                    sql = "INSERT into Master (master_EmpId,master_Assigned_Room,qty,master_itemId,master_SerialNo,master_userID) VALUES ('" & lblOrno.Text & "','" & .subitems(0).Text.ToUpper & "'," & .subitems(1).Text.ToUpper & "," & .subitems(2).Text.ToUpper & "," & .subitems(3).Text.ToUpper & ",'" & odate.ToString & "')"
+                    CommandDB()
+                    cmd.ExecuteNonQuery()
+                End With
+                iloop = iloop + 1
+                lv = Nothing
+            Loop
+        End If
     End Sub
 
     Sub resetOrder()
-        'lvorder.Items.Clear()
-        'lblORno.Text = GenerateOrderNo()
-        'PopulateProducts(lvProducts, getSortby())
-        'doChangeListViewColor(lvProducts)
-        'lbltotal.Text = 0
-        'lblitems.Text = 0
-        'tbcash.Text = 0
-        'lblchange.Text = 0
+        lvorder.Items.Clear()
+        lblOrno.Text = GenerateOrderNo()
+        PopulateProductsPOS(lvProducts, getSortby())
+        doChangeListViewColor(lvProducts)
         'tbcustomer.Text = "WALK-IN"
-        'tbcash.ForeColor = Color.Crimson
-        'btncancel.Enabled = False
+        btncancel.Enabled = False
     End Sub
 
     Sub CancelTransaction()
         resetOrder()
         lvorder.Items.Clear()
-        PopulateProducts(lvProducts, getSortby())
+        PopulateProductsPOS(lvProducts, getSortby())
         doChangeListViewColor(lvProducts)
     End Sub
 
@@ -343,10 +334,10 @@ Public Class frmPOS
     Sub mapStock()
         Dim ctr As Integer = 0
         While (ctr <> lvorder.Items.Count)
-            Dim prodname = lvorder.Items(ctr).SubItems(0).Text
+            Dim itemname = lvorder.Items(ctr).SubItems(0).Text
             Dim qtyorder = lvorder.Items(ctr).SubItems(2).Text
-            Dim newstock = getProductStock(prodname) - qtyorder
-            updateStockInDatabase(newstock, prodname)
+            Dim newstock = getProductStock(itemname) - qtyorder
+            updateStockInDatabase(newstock, itemname)
             ctr += 1
         End While
     End Sub
@@ -392,7 +383,7 @@ Public Class frmPOS
 
 
     Private Sub cboSortby_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboSortby.SelectedIndexChanged
-        PopulateProducts(lvProducts, getSortby())
+        PopulateProductsPOS(lvProducts, getSortby())
         doChangeListViewColor(lvProducts)
     End Sub
 
@@ -401,6 +392,5 @@ Public Class frmPOS
         Warning
         Info
     End Enum
-
 
 End Class

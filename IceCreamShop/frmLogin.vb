@@ -21,7 +21,7 @@
                 frmMain.btninventory.Visible = True
                 frmMain.btnreport.Visible = True
             End If
-            frmMain.lblUser.Text = cbopos.Text
+
             cbopos.Text = "- Select -"
             tbpcode.Text = ""
             'MsgBox("Welcome!", MsgBoxStyle.Information)a
@@ -39,8 +39,19 @@
         dr = cmd.ExecuteReader()
         If (dr.Read() = True) Then
             Return True
-        Else
-            Return False
+        End If
+    End Function
+    'mao ni ako query para makuha ang userID sa mu gamit sa system 
+    'kay gi ako apilon sa query didto sa master nig assign
+    Function getUserID(ByVal u As String, ByVal p As String) As Boolean
+        Connected()
+        sql = "select ID from tbluser where [position] = '" & u & "' AND [passcode]='" & p & "' "
+        cmd = New OleDb.OleDbCommand(sql, conn)
+        dr = cmd.ExecuteReader()
+        If (dr.Read()) Then
+
+            userID = dr("ID").ToString
+            frmMain.lblUser.Text = userID
         End If
     End Function
 
