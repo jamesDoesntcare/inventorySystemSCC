@@ -1,4 +1,10 @@
-﻿Module modquery
+﻿Imports System.Data
+Imports System.Data.OleDb
+Imports System.Data.Odbc
+Imports System.Data.DataTable
+Imports System.Configuration
+Imports System.Data.SqlClient
+Module modquery
 
 
     Public Sub PopulateProductsPOS(ByVal lv As ListView, ByVal orderBy As String)
@@ -77,7 +83,7 @@
         End While
     End Function
 
- 
+
     Public Sub PopulateCategory(ByVal cbo As ComboBox)
         Connected()
         cbo.Items.Clear()
@@ -112,15 +118,32 @@
 
         End While
     End Sub
-    Public Sub PopulateEmployee(ByVal cbo As ComboBox)
-        Connected()
-        sql = "SELECT distinct emp_firstname FROM Employee"
-        CommandDB()
-        dr = cmd.ExecuteReader()
-        cbo.Items.Clear()
-        While dr.Read()
-            cbo.Items.Add(dr(0))
-        End While
+    Public Sub PopulateEmployee()
+        Dim sqlconn As New OleDb.OleDbConnection
+        Dim sqlquery As New OleDb.OleDbCommand
+        Dim connString As String
+        Dim cmdDelete As New OleDbCommand
+        Dim cmdUpdate As New OleDbCommand
+        connString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\icecream.mdb"
+        sqlconn.ConnectionString = connString
+        sqlquery.Connection = sqlconn
+        sqlconn.Open()
+        Dim adp As OleDbDataAdapter = New OleDbDataAdapter("SELECT emp_Id, emp_lastname FROM Employee", sqlconn)
+        'Fill the DataTable with records from Table.
+        Dim dt As DataTable = New DataTable()
+        adp.Fill(dt)
+
+        'Insert the Default Item to DataTable.
+        Dim row As DataRow = dt.NewRow()
+        row(0) = 0
+        row(1) = "Please select"
+        dt.Rows.InsertAt(row, 0)
+
+        'Assign DataTable as DataSource.
+        frmPOS.cboEmployee.DataSource = dt
+        frmPOS.cboEmployee.DisplayMember = "emp_lastname"
+        frmPOS.cboEmployee.ValueMember = "emp_Id"
+        sqlconn.Close()
     End Sub
     Public Function IsProductExist(ByVal tbl As String, ByVal field As String, ByVal str As String) As Boolean
         Connected()

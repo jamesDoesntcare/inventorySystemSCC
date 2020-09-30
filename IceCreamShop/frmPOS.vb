@@ -40,7 +40,7 @@ Public Class frmPOS
         'load all products in listview
         btncancel.Enabled = False
         PopulateProductsPOS(lvProducts, getSortby())
-        PopulateEmployee(cboEmployee)
+        PopulateEmployee()
         doChangeListViewColor(lvProducts)
         toggleBtnEnabbled()
         setNotif("Double click an item to add and return a products", Alert.Info)
@@ -315,7 +315,7 @@ Public Class frmPOS
                 lv = listView.Items.Item(iloop)
                 With lv
                     Connected()
-                    sql = "INSERT into Master (master_EmpId,master_Assigned_Room,qty,master_itemId,master_SerialNo,master_userID) VALUES ('" & lblOrno.Text & "','" & .subitems(0).Text.ToUpper & "'," & .subitems(1).Text.ToUpper & "," & .subitems(2).Text.ToUpper & "," & .subitems(3).Text.ToUpper & ",'" & odate.ToString & "')"
+                    sql = "INSERT into Master (master_EmpId,master_Assigned_Room,qty,master_itemId,master_SerialNo,master_userID) VALUES ('" & cboEmployee.SelectedValue.ToString() & "','" & cboLocation.SelectedValue.ToString & "'," & .subitems(2).Text & "," & .subitems(0).Text & "," & .subitems(3).Text & ",'" & userID & "')"
                     CommandDB()
                     cmd.ExecuteNonQuery()
                 End With
@@ -324,6 +324,10 @@ Public Class frmPOS
             Loop
         End If
     End Sub
+    'Public Sub getEmployeeID()
+    '    Connected()
+    '    sql = "SELECT * FROM Employee WHERE [position] = '" & u & "' AND [passcode] = '" & p & "' "
+    'End Sub
 
     Sub resetOrder()
         lvorder.Items.Clear()

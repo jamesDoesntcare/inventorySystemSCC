@@ -42,16 +42,18 @@ Partial Class frmPOS
         Me.btnPurchase = New System.Windows.Forms.Button()
         Me.btncancel = New System.Windows.Forms.Button()
         Me.panelOrder = New System.Windows.Forms.Panel()
+        Me.cboLocation = New System.Windows.Forms.ComboBox()
         Me.cboEmployee = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lvorder = New System.Windows.Forms.ListView()
+        Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.panelProduct.SuspendLayout()
         Me.panelPurchase.SuspendLayout()
         Me.panelOrder.SuspendLayout()
@@ -189,9 +191,9 @@ Partial Class frmPOS
         Me.panelPurchase.Controls.Add(Me.Label2)
         Me.panelPurchase.Controls.Add(Me.btnPurchase)
         Me.panelPurchase.ForeColor = System.Drawing.SystemColors.ButtonShadow
-        Me.panelPurchase.Location = New System.Drawing.Point(571, 482)
+        Me.panelPurchase.Location = New System.Drawing.Point(578, 545)
         Me.panelPurchase.Name = "panelPurchase"
-        Me.panelPurchase.Size = New System.Drawing.Size(479, 194)
+        Me.panelPurchase.Size = New System.Drawing.Size(472, 131)
         Me.panelPurchase.TabIndex = 28
         '
         'lblOrno
@@ -199,7 +201,7 @@ Partial Class frmPOS
         Me.lblOrno.AutoSize = True
         Me.lblOrno.Font = New System.Drawing.Font("Century Gothic", 14.25!)
         Me.lblOrno.ForeColor = System.Drawing.Color.Teal
-        Me.lblOrno.Location = New System.Drawing.Point(322, 54)
+        Me.lblOrno.Location = New System.Drawing.Point(322, 41)
         Me.lblOrno.Name = "lblOrno"
         Me.lblOrno.Size = New System.Drawing.Size(112, 22)
         Me.lblOrno.TabIndex = 34
@@ -210,7 +212,7 @@ Partial Class frmPOS
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(287, 21)
+        Me.Label2.Location = New System.Drawing.Point(287, 8)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(168, 21)
         Me.Label2.TabIndex = 34
@@ -223,7 +225,7 @@ Partial Class frmPOS
         Me.btnPurchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPurchase.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPurchase.ForeColor = System.Drawing.Color.Teal
-        Me.btnPurchase.Location = New System.Drawing.Point(313, 133)
+        Me.btnPurchase.Location = New System.Drawing.Point(313, 75)
         Me.btnPurchase.Name = "btnPurchase"
         Me.btnPurchase.Size = New System.Drawing.Size(129, 50)
         Me.btnPurchase.TabIndex = 28
@@ -238,7 +240,7 @@ Partial Class frmPOS
         Me.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancel.ForeColor = System.Drawing.Color.Crimson
-        Me.btncancel.Location = New System.Drawing.Point(326, 35)
+        Me.btncancel.Location = New System.Drawing.Point(326, 27)
         Me.btncancel.Name = "btncancel"
         Me.btncancel.Size = New System.Drawing.Size(129, 50)
         Me.btncancel.TabIndex = 39
@@ -249,16 +251,31 @@ Partial Class frmPOS
         '
         Me.panelOrder.BackColor = System.Drawing.Color.WhiteSmoke
         Me.panelOrder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panelOrder.Controls.Add(Me.cboLocation)
         Me.panelOrder.Controls.Add(Me.cboEmployee)
         Me.panelOrder.Controls.Add(Me.btncancel)
         Me.panelOrder.Controls.Add(Me.Label8)
         Me.panelOrder.Controls.Add(Me.lvorder)
+        Me.panelOrder.Controls.Add(Me.Label3)
         Me.panelOrder.Controls.Add(Me.Label12)
         Me.panelOrder.ForeColor = System.Drawing.SystemColors.ButtonShadow
-        Me.panelOrder.Location = New System.Drawing.Point(571, 45)
+        Me.panelOrder.Location = New System.Drawing.Point(578, 45)
         Me.panelOrder.Name = "panelOrder"
-        Me.panelOrder.Size = New System.Drawing.Size(479, 439)
+        Me.panelOrder.Size = New System.Drawing.Size(472, 494)
         Me.panelOrder.TabIndex = 29
+        '
+        'cboLocation
+        '
+        Me.cboLocation.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cboLocation.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboLocation.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.cboLocation.FormattingEnabled = True
+        Me.cboLocation.ItemHeight = 23
+        Me.cboLocation.Location = New System.Drawing.Point(19, 120)
+        Me.cboLocation.MaximumSize = New System.Drawing.Size(300, 0)
+        Me.cboLocation.Name = "cboLocation"
+        Me.cboLocation.Size = New System.Drawing.Size(273, 31)
+        Me.cboLocation.TabIndex = 39
         '
         'cboEmployee
         '
@@ -267,7 +284,7 @@ Partial Class frmPOS
         Me.cboEmployee.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.cboEmployee.FormattingEnabled = True
         Me.cboEmployee.ItemHeight = 23
-        Me.cboEmployee.Location = New System.Drawing.Point(20, 49)
+        Me.cboEmployee.Location = New System.Drawing.Point(20, 35)
         Me.cboEmployee.MaximumSize = New System.Drawing.Size(300, 0)
         Me.cboEmployee.Name = "cboEmployee"
         Me.cboEmployee.Size = New System.Drawing.Size(273, 31)
@@ -278,7 +295,7 @@ Partial Class frmPOS
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(15, 101)
+        Me.Label8.Location = New System.Drawing.Point(15, 154)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(166, 21)
         Me.Label8.TabIndex = 31
@@ -293,12 +310,17 @@ Partial Class frmPOS
         Me.lvorder.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lvorder.FullRowSelect = True
         Me.lvorder.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        Me.lvorder.Location = New System.Drawing.Point(19, 125)
+        Me.lvorder.Location = New System.Drawing.Point(19, 187)
         Me.lvorder.Name = "lvorder"
         Me.lvorder.Size = New System.Drawing.Size(436, 293)
         Me.lvorder.TabIndex = 28
         Me.lvorder.UseCompatibleStateImageBehavior = False
         Me.lvorder.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader11
+        '
+        Me.ColumnHeader11.Text = "ID"
+        Me.ColumnHeader11.Width = 0
         '
         'ColumnHeader8
         '
@@ -314,6 +336,17 @@ Partial Class frmPOS
         '
         Me.ColumnHeader10.Text = "Serial Number"
         Me.ColumnHeader10.Width = 140
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(16, 83)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(96, 21)
+        Me.Label3.TabIndex = 33
+        Me.Label3.Text = "- Location -"
         '
         'Label12
         '
@@ -350,11 +383,6 @@ Partial Class frmPOS
         Me.Button1.TabIndex = 40
         Me.Button1.Text = " X"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'ColumnHeader11
-        '
-        Me.ColumnHeader11.Text = "ID"
-        Me.ColumnHeader11.Width = 0
         '
         'frmPOS
         '
@@ -411,4 +439,6 @@ Partial Class frmPOS
     Friend WithEvents lblOrno As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents ColumnHeader11 As ColumnHeader
+    Friend WithEvents cboLocation As ComboBox
+    Friend WithEvents Label3 As Label
 End Class
