@@ -36,3 +36,4 @@ D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\obj\x86\Debug\I
 D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\obj\x86\Debug\IceCreamShop.exe
 D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\obj\x86\Debug\IceCreamShop.xml
 D:\New Folder\SCCinventorySystem\inventorySystemSCC\IceCreamShop\obj\x86\Debug\IceCreamShop.pdb
+F:\InventorySystemSCC\IceCreamShop\obj\x86\Debug\IceCreamShop.SerialNum.resources

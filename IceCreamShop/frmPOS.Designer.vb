@@ -46,10 +46,10 @@ Partial Class frmPOS
         Me.cboEmployee = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lvorder = New System.Windows.Forms.ListView()
-        Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -305,7 +305,7 @@ Partial Class frmPOS
         '
         Me.lvorder.BackColor = System.Drawing.Color.White
         Me.lvorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lvorder.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader11, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10})
+        Me.lvorder.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11})
         Me.lvorder.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvorder.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lvorder.FullRowSelect = True
@@ -317,25 +317,25 @@ Partial Class frmPOS
         Me.lvorder.UseCompatibleStateImageBehavior = False
         Me.lvorder.View = System.Windows.Forms.View.Details
         '
-        'ColumnHeader11
-        '
-        Me.ColumnHeader11.Text = "ID"
-        Me.ColumnHeader11.Width = 0
-        '
         'ColumnHeader8
         '
-        Me.ColumnHeader8.Text = "Name"
-        Me.ColumnHeader8.Width = 125
+        Me.ColumnHeader8.Text = "ID"
+        Me.ColumnHeader8.Width = 0
         '
         'ColumnHeader9
         '
-        Me.ColumnHeader9.Text = "Quantity"
+        Me.ColumnHeader9.Text = "Name"
         Me.ColumnHeader9.Width = 125
         '
         'ColumnHeader10
         '
-        Me.ColumnHeader10.Text = "Serial Number"
-        Me.ColumnHeader10.Width = 140
+        Me.ColumnHeader10.Text = "Quantity"
+        Me.ColumnHeader10.Width = 125
+        '
+        'ColumnHeader11
+        '
+        Me.ColumnHeader11.Text = "Serial Number"
+        Me.ColumnHeader11.Width = 140
         '
         'Label3
         '
@@ -433,12 +433,12 @@ Partial Class frmPOS
     Friend WithEvents ColumnHeader5 As ColumnHeader
     Friend WithEvents ColumnHeader6 As ColumnHeader
     Friend WithEvents ColumnHeader7 As ColumnHeader
-    Friend WithEvents ColumnHeader8 As ColumnHeader
     Friend WithEvents ColumnHeader9 As ColumnHeader
     Friend WithEvents ColumnHeader10 As ColumnHeader
+    Friend WithEvents ColumnHeader11 As ColumnHeader
     Friend WithEvents lblOrno As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents ColumnHeader11 As ColumnHeader
+    Friend WithEvents ColumnHeader8 As ColumnHeader
     Friend WithEvents cboLocation As ComboBox
     Friend WithEvents Label3 As Label
 End Class

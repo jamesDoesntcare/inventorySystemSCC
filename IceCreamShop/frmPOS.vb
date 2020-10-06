@@ -2,8 +2,10 @@
 
 Public Class frmPOS
 
+
+
     Dim id As Integer
-    Dim itemID As Integer
+        Dim itemID As Integer
     Dim itemType As String
     Dim itemname As String
     Dim itemprice As Double
@@ -272,7 +274,8 @@ Public Class frmPOS
             End If
         Else
             'add item
-            With lvorder.Items.Add(id)
+            With lvorder.Items.Add(0)
+                .SubItems.Add(id)
                 .SubItems.Add(itemname)
                 .SubItems.Add(enterQty)
                 .SubItems.Add(enterSN)
@@ -315,7 +318,18 @@ Public Class frmPOS
                 lv = listView.Items.Item(iloop)
                 With lv
                     Connected()
-                    sql = "INSERT into Master (master_EmpId,master_Assigned_Room,qty,master_itemId,master_SerialNo,master_userID) VALUES ('" & cboEmployee.SelectedValue.ToString() & "','" & cboLocation.SelectedValue.ToString & "'," & .subitems(2).Text & "," & .subitems(0).Text & "," & .subitems(3).Text & ",'" & userID & "')"
+                    sql = "INSERT into Master (master_EmpId,
+                                               master_Assigned_Room,
+                                               qty,
+                                               master_itemId,
+                                               master_SerialNo,
+                                               master_userID)
+                                    VALUES ('" & cboEmployee.SelectedValue.ToString & "',
+                                            '" & cboLocation.SelectedValue.ToString & "',
+                                            '" & .subitems(2).Text.ToUpper & "',
+                                            '" & .subitems(0).Text.ToUpper & "',
+                                            '" & .subitems(3).Text.ToUpper & "',
+                                            '" & userID & "')"
                     CommandDB()
                     cmd.ExecuteNonQuery()
                 End With
@@ -407,5 +421,4 @@ Public Class frmPOS
         Warning
         Info
     End Enum
-
 End Class

@@ -129,6 +129,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="SalesModule.vb" />
+    <Compile Include="SerialNum.Designer.vb">
+      <DependentUpon>SerialNum.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SerialNum.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmMain.resx">
@@ -151,6 +157,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SerialNum.resx">
+      <DependentUpon>SerialNum.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
