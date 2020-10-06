@@ -64,6 +64,7 @@ Public Class frmInventory
         Else
             If IsUserInputValid() = True Then
                 SaveData()
+                SerialNum.ShowDialog()
                 ClearUserInput()
                 doChangeListViewColor(lvProducts)
                 MsgBox("Successfully added", MsgBoxStyle.Information)
@@ -107,9 +108,7 @@ Public Class frmInventory
 
 #Region "Functions and Methods"
 
-
-
-    Sub SaveData()
+    Sub SaveDataSave()
         Connected()
         sql = "INSERT INTO item 
                                 (item_brand,
@@ -123,9 +122,44 @@ Public Class frmInventory
                                  item_type ) 
                        VALUES ('" & tbname.Text.ToUpper & "',
                                '" & tbpurchase.Text.ToString & "',
-                               '" & tbstock.Text & "',
+                               '" & "1" & "',
                                '" & tbsupplier.Text.ToString & "',
-                               '" & " 2 " & "',
+                               '" & userID & "',
+                               '" & tblocation.Text.ToString & "',
+                               '" & cbstatus.Text.ToUpper & "',
+                               '" & tbprice.Text.ToString & "',
+                               '" & cbocategory.Text.ToUpper & "')"
+        CommandDB()
+        dr = cmd.ExecuteReader()
+        PopulateProducts(lvProducts, "type_name")
+    End Sub
+    Sub SaveData()
+        Connected()
+        sql = "INSERT INTO Quantity 
+                                (quantity) 
+                       VALUES ('" & tbstock.Text & "')"
+        CommandDB()
+        dr = cmd.ExecuteReader()
+
+
+
+
+        Connected()
+        sql = "INSERT INTO item 
+                                (item_brand,
+                                 item_datepurchase,
+                                 item_stock,
+                                 item_supplier,
+                                 item_userID,
+                                 item_location,
+                                 item_status,
+                                 item_price,
+                                 item_type ) 
+                       VALUES ('" & tbname.Text.ToUpper & "',
+                               '" & tbpurchase.Text.ToString & "',
+                               '" & "1" & "',
+                               '" & tbsupplier.Text.ToString & "',
+                               '" & userID & "',
                                '" & tblocation.Text.ToString & "',
                                '" & cbstatus.Text.ToUpper & "',
                                '" & tbprice.Text.ToString & "',

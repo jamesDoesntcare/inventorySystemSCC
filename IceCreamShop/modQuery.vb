@@ -32,7 +32,7 @@ Module modquery
         Connected()
         With lv
             .Items.Clear()
-            sql = "SELECT * from Item"
+            sql = "SELECT * from Item, Quantity where Quantity.quantity_id = Item.item_stock  "
             CommandDB()
             dr = cmd.ExecuteReader()
             lv.Items.Clear()
@@ -40,9 +40,8 @@ Module modquery
                 With lv.Items.Add(dr("item_id"))
                     .SubItems.Add(dr("item_type"))
                     .SubItems.Add(dr("item_brand"))
-                    .SubItems.Add(dr("SN"))
                     .SubItems.Add(dr("item_price"))
-                    .SubItems.Add(dr("item_stock"))
+                    .SubItems.Add(dr("quantity"))
                     .SubItems.Add(dr("item_datepurchase"))
                     .SubItems.Add(dr("item_location"))
                     .SubItems.Add(dr("item_status"))
